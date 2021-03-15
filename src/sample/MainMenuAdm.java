@@ -1,12 +1,8 @@
 package sample;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -25,76 +21,76 @@ public class MainMenuAdm {
     private URL location;
 
     @FXML
-    private Button AddBAdm;
+    private Button addInfo;
 
     @FXML
-    private Button DelBAdm;
+    private Button delInfo;
 
     @FXML
-    private Button AllBAdm;
+    private Button viewAll;
 
     @FXML
-    private Button MetodBAdm;
+    private Button doMethod;
 
     @FXML
-    private Button AddUSBAdm;
+    private Button addUser;
 
     @FXML
-    private Button AddADMBAdm;
+    private Button addAdmin;
 
     @FXML
-    private Button DelUSBAdm;
+    private Button delUser;
 
     @FXML
-    private Button DelAdmBAdm;
+    private Button delAdmin;
 
     @FXML
-    private Button Exit;
+    private Button exit;
 
     @FXML
     void initialize() {
-        AddBAdm.setOnAction((event) -> {
+        addInfo.setOnAction((event) -> {
             setMenuingSignal(true);
-            closeWindow(AddBAdm);
+            closeWindow(addInfo);
             buttonAction("AddMech.fxml","Добавление данных о заключенной сделке",427, 570);
         });
-        DelBAdm.setOnAction((event) -> {
+        delInfo.setOnAction((event) -> {
             setMenuingSignal(true);
-            closeWindow(DelBAdm);
+            closeWindow(delInfo);
             buttonAction("DelMech.fxml","Удаление данных о заключенной сделке",427, 570);
         });
-        AddADMBAdm.setOnAction((event) -> {
+        addAdmin.setOnAction((event) -> {
             setAddingSignalSignal(true);
-            closeWindow(AddADMBAdm);
+            closeWindow(addAdmin);
             buttonAction("AddAdm.fxml","Добавление администратора",342, 326);
         });
-        AddUSBAdm.setOnAction((event) -> {
+        addUser.setOnAction((event) -> {
             setAddingSignalSignal(false);
-            closeWindow(AddUSBAdm);
+            closeWindow(addUser);
             buttonAction("AddAdm.fxml","Добавление пользователя",342, 326);
         });
-        DelAdmBAdm.setOnAction((event) -> {
+        delAdmin.setOnAction((event) -> {
             setAddingSignalSignal(true);
-            closeWindow(DelAdmBAdm);
+            closeWindow(delAdmin);
             buttonAction("DelAdm.fxml","Удаление администратора",342, 326);
         });
-        DelUSBAdm.setOnAction((event) -> {
+        delUser.setOnAction((event) -> {
             setAddingSignalSignal(false);
-            closeWindow(DelUSBAdm);
+            closeWindow(delUser);
             buttonAction("DelAdm.fxml","Удаление пользователя",342, 326);
         });
-        AllBAdm.setOnAction((event) -> {
+        viewAll.setOnAction((event) -> {
             setMenuingSignal(true);
-            closeWindow(AllBAdm);
+            closeWindow(viewAll);
             buttonAction("Table.fxml","Данные",906, 660);
         });
-        MetodBAdm.setOnAction((event) -> {
+        doMethod.setOnAction((event) -> {
             setMenuingSignal(true);
-            closeWindow(MetodBAdm);
+            closeWindow(doMethod);
             buttonAction("Method.fxml","Метод",525, 336);
         });
-        Exit.setOnAction((event) -> {
-            Stage stage1 = (Stage) Exit.getScene().getWindow();
+        exit.setOnAction((event) -> {
+            Stage stage1 = (Stage) exit.getScene().getWindow();
             stage1.close();
         });
     }

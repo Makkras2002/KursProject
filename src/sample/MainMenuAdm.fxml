@@ -13,14 +13,14 @@
             <Font name="Italic_IV50" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="AddBAdm" layoutX="60.0" layoutY="127.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="193.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
-      <Button fx:id="DelBAdm" layoutX="57.0" layoutY="184.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
-      <Button fx:id="AllBAdm" layoutX="57.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
-      <Button fx:id="MetodBAdm" layoutX="57.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выполнить метод" />
-      <Button fx:id="AddUSBAdm" layoutX="57.0" layoutY="364.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Добавить пользователя" />
-      <Button fx:id="AddADMBAdm" layoutX="59.0" layoutY="427.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Добавить администратора" />
-      <Button fx:id="DelUSBAdm" layoutX="353.0" layoutY="364.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить пользователя" />
-      <Button fx:id="DelAdmBAdm" layoutX="353.0" layoutY="427.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить  администратора" />
-      <Button fx:id="Exit" layoutX="203.0" layoutY="536.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
+      <Button fx:id="addInfo" layoutX="60.0" layoutY="127.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="193.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
+      <Button fx:id="delInfo" layoutX="57.0" layoutY="184.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
+      <Button fx:id="viewAll" layoutX="57.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
+      <Button fx:id="doMethod" layoutX="57.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выполнить метод" />
+      <Button fx:id="addUser" layoutX="57.0" layoutY="364.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Добавить пользователя" />
+      <Button fx:id="addAdmin" layoutX="59.0" layoutY="427.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Добавить администратора" />
+      <Button fx:id="delUser" layoutX="353.0" layoutY="364.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить пользователя" />
+      <Button fx:id="delAdmin" layoutX="353.0" layoutY="427.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить  администратора" />
+      <Button fx:id="exit" layoutX="203.0" layoutY="536.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
    </children>
 </AnchorPane>

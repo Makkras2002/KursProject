@@ -12,10 +12,10 @@
                 <Font name="Italic_IV50" size="36.0" />
             </font>
         </Label>
-        <Button fx:id="AddBAdm" layoutX="60.0" layoutY="127.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="193.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
-        <Button fx:id="DelBAdm" layoutX="57.0" layoutY="184.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
-        <Button fx:id="AllBAdm" layoutX="57.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
-        <Button fx:id="MetodBAdm" layoutX="57.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выполнить метод" />
-        <Button fx:id="Exit" layoutX="203.0" layoutY="392.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
+        <Button fx:id="addInfo" layoutX="60.0" layoutY="127.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="193.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
+        <Button fx:id="delInfo" layoutX="57.0" layoutY="184.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
+        <Button fx:id="viewAll" layoutX="57.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
+        <Button fx:id="doMethod" layoutX="57.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выполнить метод" />
+        <Button fx:id="exit" layoutX="203.0" layoutY="392.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
     </children>
 </AnchorPane>

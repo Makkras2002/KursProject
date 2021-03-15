@@ -1,14 +1,9 @@
 package sample;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
 import static sample.BaseButton.buttonAction;
@@ -23,12 +18,12 @@ public class Method {
     private URL location;
 
     @FXML
-    private Button Button;
+    private Button button;
 
     @FXML
     void initialize() {
-        Button.setOnAction((event) -> {
-            closeWindow(Button);
+        button.setOnAction((event) -> {
+            closeWindow(button);
             if(isMenuingSignal()){
                 buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
             }

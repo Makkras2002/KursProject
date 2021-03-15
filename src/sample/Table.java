@@ -1,16 +1,11 @@
 package sample;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
 import static sample.BaseButton.buttonAction;
@@ -52,12 +47,12 @@ public class Table {
     private TableColumn<?, ?> Date;
 
     @FXML
-    private Button TableButton;
+    private Button tableButton;
 
     @FXML
     void initialize() {
-        TableButton.setOnAction((event) -> {
-            closeWindow(TableButton);
+        tableButton.setOnAction((event) -> {
+            closeWindow(tableButton);
             if(isMenuingSignal()){
                 buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
             }

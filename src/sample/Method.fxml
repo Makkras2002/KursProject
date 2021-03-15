@@ -13,6 +13,6 @@
             <Font name="Italic_IV50" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="Button" layoutX="212.0" layoutY="269.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+      <Button fx:id="button" layoutX="212.0" layoutY="269.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
    </children>
 </AnchorPane>

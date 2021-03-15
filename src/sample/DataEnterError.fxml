@@ -12,6 +12,6 @@
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <Button fx:id="DataEnterError" layoutX="183.0" layoutY="76.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="104.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+        <Button fx:id="dataEnterError" layoutX="183.0" layoutY="76.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="104.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
     </children>
 </AnchorPane>

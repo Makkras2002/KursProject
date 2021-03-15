@@ -1,12 +1,8 @@
 package sample;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -24,44 +20,44 @@ public class MainMenuUser {
     private URL location;
 
     @FXML
-    private Button AddBAdm;
+    private Button addInfo;
 
     @FXML
-    private Button DelBAdm;
+    private Button delInfo;
 
     @FXML
-    private Button AllBAdm;
+    private Button viewAll;
 
     @FXML
-    private Button MetodBAdm;
+    private Button doMethod;
 
     @FXML
-    private Button Exit;
+    private Button exit;
 
     @FXML
     void initialize() {
-        AddBAdm.setOnAction((event) -> {
+        addInfo.setOnAction((event) -> {
             setMenuingSignal(false);
-            closeWindow(AddBAdm);
+            closeWindow(addInfo);
             buttonAction("AddMech.fxml","Добавление данных о заключенной сделке",427, 570);
         });
-        DelBAdm.setOnAction((event) -> {
+        delInfo.setOnAction((event) -> {
             setMenuingSignal(false);
-            closeWindow(DelBAdm);
+            closeWindow(delInfo);
             buttonAction("DelMech.fxml","Удаление данных о заключенной сделке",427, 570);
         });
-        AllBAdm.setOnAction((event) -> {
+        viewAll.setOnAction((event) -> {
             setMenuingSignal(false);
-            closeWindow(AllBAdm);
+            closeWindow(viewAll);
             buttonAction("Table.fxml","Данные",906, 660);
         });
-        MetodBAdm.setOnAction((event) -> {
+        doMethod.setOnAction((event) -> {
             setMenuingSignal(false);
-            closeWindow(MetodBAdm);
+            closeWindow(doMethod);
             buttonAction("Method.fxml","Метод",525, 336);
         });
-        Exit.setOnAction((event) -> {
-            Stage stage1 = (Stage) Exit.getScene().getWindow();
+        exit.setOnAction((event) -> {
+            Stage stage1 = (Stage) exit.getScene().getWindow();
             stage1.close();
         });
     }

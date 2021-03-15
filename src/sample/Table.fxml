@@ -26,6 +26,6 @@
             <TableColumn fx:id="Date" prefWidth="123.2000732421875" text="Дата сделки" />
         </columns>
       </TableView>
-      <Button fx:id="TableButton" layoutX="273.0" layoutY="607.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Button" />
+      <Button fx:id="tableButton" layoutX="273.0" layoutY="607.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Button" />
    </children>
 </AnchorPane>
