@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.isAddingSignalSignal;
 import static CheckersAndEts.CheckerOfString.compareLines;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 public class DelAdm {
 
@@ -39,50 +41,20 @@ public class DelAdm {
             }
             else {
                 if(isAddingSignalSignal()){
-                    Stage stage1 = (Stage) addButton.getScene().getWindow();
-                    stage1.close();
-                    Stage stage = new Stage();
-                    Parent root = null;
-                    try {
-                        root = FXMLLoader.load(getClass().getResource("MainMenuAdm.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    stage.setTitle("ООО \"Грузовые детали1\"");
-                    stage.setScene(new Scene(root, 600, 644));
-                    stage.show();
+                    closeWindow(addButton);
+                    buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали1\"",600, 644);
                 }
                 if(isAddingSignalSignal()==false){
-                    Stage stage1 = (Stage) addButton.getScene().getWindow();
-                    stage1.close();
-                    Stage stage = new Stage();
-                    Parent root = null;
-                    try {
-                        root = FXMLLoader.load(getClass().getResource("MainMenuAdm.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    stage.setTitle("ООО \"Грузовые детали0\"");
-                    stage.setScene(new Scene(root, 600, 644));
-                    stage.show();
+                    closeWindow(addButton);
+                    buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали0\"",600, 644);
                 }
 
             }
         });
     }
     public void errorCase(){
-        Stage stage1 = (Stage) addButton.getScene().getWindow();
-        stage1.close();
-        Stage stage = new Stage();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("DataEnterError.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("Ошибка");
-        stage.setScene(new Scene(root, 470, 188));
-        stage.show();
+        closeWindow(addButton);
+        buttonAction("DataEnterError.fxml","Ошибка",470, 188);
     }
 
 }

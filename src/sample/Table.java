@@ -13,6 +13,8 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 public class Table {
 
@@ -55,29 +57,12 @@ public class Table {
     @FXML
     void initialize() {
         TableButton.setOnAction((event) -> {
-            Stage stage1 = (Stage) TableButton.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
+            closeWindow(TableButton);
             if(isMenuingSignal()){
-                try {
-                    root = FXMLLoader.load(getClass().getResource("MainMenuAdm.fxml"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                stage.setTitle("Данные");
-                stage.setScene(new Scene(root, 906, 660));
-                stage.show();
+                buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
             }
             if(isMenuingSignal() ==false){
-                try {
-                    root = FXMLLoader.load(getClass().getResource("MainMenuUser.fxml"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                stage.setTitle("Данные");
-                stage.setScene(new Scene(root, 906, 660));
-                stage.show();
+                buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
             }
         });
     }

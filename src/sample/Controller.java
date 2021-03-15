@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.setSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 public class Controller {
 
@@ -32,33 +34,13 @@ public class Controller {
     void initialize() {
         enterAsAdmin.setOnAction((event) -> {
             setSignal(true);
-            Stage stage1 = (Stage) enterAsAdmin.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("LoginAdm.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Авторизация");
-            stage.setScene(new Scene(root, 306, 323));
-            stage.show();
+            closeWindow(enterAsAdmin);
+            buttonAction("LoginAdm.fxml","Авторизация",306, 323);
         });
         enterAsUser.setOnAction((event) -> {
             setSignal(false);
-            Stage stage1 = (Stage) enterAsUser.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("LoginAdm.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Авторизация");
-            stage.setScene(new Scene(root, 306, 323));
-            stage.show();
+            closeWindow(enterAsUser);
+            buttonAction("LoginAdm.fxml","Авторизация",306, 323);
         });
     }
 }

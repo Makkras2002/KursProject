@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.setMenuingSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 
 public class MainMenuUser {
@@ -40,63 +42,23 @@ public class MainMenuUser {
     void initialize() {
         AddBAdm.setOnAction((event) -> {
             setMenuingSignal(false);
-            Stage stage1 = (Stage) AddBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("AddMech.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Добавление данных о заклюенной сделке");
-            stage.setScene(new Scene(root, 427, 570));
-            stage.show();
+            closeWindow(AddBAdm);
+            buttonAction("AddMech.fxml","Добавление данных о заключенной сделке",427, 570);
         });
         DelBAdm.setOnAction((event) -> {
             setMenuingSignal(false);
-            Stage stage1 = (Stage) DelBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("DelMech.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Добавление данных о заклюенной сделке");
-            stage.setScene(new Scene(root, 427, 570));
-            stage.show();
+            closeWindow(DelBAdm);
+            buttonAction("DelMech.fxml","Удаление данных о заключенной сделке",427, 570);
         });
         AllBAdm.setOnAction((event) -> {
             setMenuingSignal(false);
-            Stage stage1 = (Stage) AllBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("Table.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Данные");
-            stage.setScene(new Scene(root, 906, 660));
-            stage.show();
+            closeWindow(AllBAdm);
+            buttonAction("Table.fxml","Данные",906, 660);
         });
         MetodBAdm.setOnAction((event) -> {
             setMenuingSignal(false);
-            Stage stage1 = (Stage) MetodBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("Method.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Метод");
-            stage.setScene(new Scene(root, 525, 336));
-            stage.show();
+            closeWindow(MetodBAdm);
+            buttonAction("Method.fxml","Метод",525, 336);
         });
         Exit.setOnAction((event) -> {
             Stage stage1 = (Stage) Exit.getScene().getWindow();

@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.setAddingSignalSignal;
 import static CheckersAndEts.CheckerAdmOrUs.setMenuingSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 
 public class MainMenuAdm {
@@ -53,123 +55,43 @@ public class MainMenuAdm {
     void initialize() {
         AddBAdm.setOnAction((event) -> {
             setMenuingSignal(true);
-            Stage stage1 = (Stage) AddBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("AddMech.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Добавление данных о заклюенной сделке");
-            stage.setScene(new Scene(root, 427, 570));
-            stage.show();
+            closeWindow(AddBAdm);
+            buttonAction("AddMech.fxml","Добавление данных о заключенной сделке",427, 570);
         });
         DelBAdm.setOnAction((event) -> {
             setMenuingSignal(true);
-            Stage stage1 = (Stage) DelBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("DelMech.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Добавление данных о заклюенной сделке");
-            stage.setScene(new Scene(root, 427, 570));
-            stage.show();
+            closeWindow(DelBAdm);
+            buttonAction("DelMech.fxml","Удаление данных о заключенной сделке",427, 570);
         });
         AddADMBAdm.setOnAction((event) -> {
             setAddingSignalSignal(true);
-            Stage stage1 = (Stage) AddADMBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("AddAdm.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Добавление администратора");
-            stage.setScene(new Scene(root, 342, 326));
-            stage.show();
+            closeWindow(AddADMBAdm);
+            buttonAction("AddAdm.fxml","Добавление администратора",342, 326);
         });
         AddUSBAdm.setOnAction((event) -> {
             setAddingSignalSignal(false);
-            Stage stage1 = (Stage) AddUSBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("AddAdm.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Добавление пользователя");
-            stage.setScene(new Scene(root, 342, 326));
-            stage.show();
+            closeWindow(AddUSBAdm);
+            buttonAction("AddAdm.fxml","Добавление пользователя",342, 326);
         });
         DelAdmBAdm.setOnAction((event) -> {
             setAddingSignalSignal(true);
-            Stage stage1 = (Stage) DelAdmBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("DelAdm.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Удаление администратора");
-            stage.setScene(new Scene(root, 342, 326));
-            stage.show();
+            closeWindow(DelAdmBAdm);
+            buttonAction("DelAdm.fxml","Удаление администратора",342, 326);
         });
         DelUSBAdm.setOnAction((event) -> {
             setAddingSignalSignal(false);
-            Stage stage1 = (Stage) DelUSBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("DelAdm.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Удаление пользователя");
-            stage.setScene(new Scene(root, 342, 326));
-            stage.show();
+            closeWindow(DelUSBAdm);
+            buttonAction("DelAdm.fxml","Удаление пользователя",342, 326);
         });
         AllBAdm.setOnAction((event) -> {
             setMenuingSignal(true);
-            Stage stage1 = (Stage) AllBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("Table.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Данные");
-            stage.setScene(new Scene(root, 906, 660));
-            stage.show();
+            closeWindow(AllBAdm);
+            buttonAction("Table.fxml","Данные",906, 660);
         });
         MetodBAdm.setOnAction((event) -> {
             setMenuingSignal(true);
-            Stage stage1 = (Stage) MetodBAdm.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("Method.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("Метод");
-            stage.setScene(new Scene(root, 525, 336));
-            stage.show();
+            closeWindow(MetodBAdm);
+            buttonAction("Method.fxml","Метод",525, 336);
         });
         Exit.setOnAction((event) -> {
             Stage stage1 = (Stage) Exit.getScene().getWindow();

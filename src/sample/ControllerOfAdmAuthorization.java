@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerOfString.compareLines;
 import static CheckersAndEts.CheckerAdmOrUs.isSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 public class ControllerOfAdmAuthorization {
 
@@ -41,18 +43,8 @@ public class ControllerOfAdmAuthorization {
                 sign1 = compareLines(loginAdminTextField.getText(),"asd");
                 sign2 = compareLines(passwordAdminTextField.getText(),"123");
                 if(sign1 && sign2){
-                    Stage stage1 = (Stage) authorizationAdmButton.getScene().getWindow();
-                    stage1.close();
-                    Stage stage = new Stage();
-                    Parent root = null;
-                    try {
-                        root = FXMLLoader.load(getClass().getResource("MainMenuAdm.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    stage.setTitle("ООО \"Грузовые детали\"");
-                    stage.setScene(new Scene(root, 600, 644));
-                    stage.show();
+                    closeWindow(authorizationAdmButton);
+                    buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
                 }
                 else {
                     errorCase();
@@ -64,18 +56,8 @@ public class ControllerOfAdmAuthorization {
                 sign1 = compareLines(loginAdminTextField.getText(),"kekw");
                 sign2 = compareLines(passwordAdminTextField.getText(),"101");
                 if(sign1 && sign2){
-                    Stage stage1 = (Stage) authorizationAdmButton.getScene().getWindow();
-                    stage1.close();
-                    Stage stage = new Stage();
-                    Parent root = null;
-                    try {
-                        root = FXMLLoader.load(getClass().getResource("MainMenuUser.fxml"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    stage.setTitle("ООО \"Грузовые детали\"");
-                    stage.setScene(new Scene(root, 600, 644));
-                    stage.show();
+                    closeWindow(authorizationAdmButton);
+                    buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
                 }
                 else {
                     errorCase();
@@ -84,18 +66,8 @@ public class ControllerOfAdmAuthorization {
         });
     }
     public void errorCase(){
-        Stage stage1 = (Stage) authorizationAdmButton.getScene().getWindow();
-        stage1.close();
-        Stage stage = new Stage();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("AuthError.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("Ошибка авторизации");
-        stage.setScene(new Scene(root, 247, 188));
-        stage.show();
+        closeWindow(authorizationAdmButton);
+        buttonAction("AuthError.fxml","Ошибка авторизации",247, 188);
     }
 }
 

@@ -11,6 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
+
 public class AuthError {
 
     @FXML
@@ -25,18 +28,8 @@ public class AuthError {
     @FXML
     void initialize() {
         AuthError.setOnAction((event) -> {
-            Stage stage1 = (Stage) AuthError.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
-            try {
-                root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            stage.setTitle("ООО \"Грузовые детали\"");
-            stage.setScene(new Scene(root, 519, 531));
-            stage.show();
+            closeWindow(AuthError);
+            buttonAction("sample.fxml","ООО \"Грузовые детали\"",519, 531);
         });
     }
 }

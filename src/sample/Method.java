@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 public class Method {
 
@@ -26,29 +28,12 @@ public class Method {
     @FXML
     void initialize() {
         Button.setOnAction((event) -> {
-            Stage stage1 = (Stage) Button.getScene().getWindow();
-            stage1.close();
-            Stage stage = new Stage();
-            Parent root = null;
+            closeWindow(Button);
             if(isMenuingSignal()){
-                try {
-                    root = FXMLLoader.load(getClass().getResource("MainMenuAdm.fxml"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                stage.setTitle("ООО \"Грузовые детали\"");
-                stage.setScene(new Scene(root, 600, 644));
-                stage.show();
+                buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
             }
             if(isMenuingSignal() ==false){
-                try {
-                    root = FXMLLoader.load(getClass().getResource("MainMenuUser.fxml"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                stage.setTitle("ООО \"Грузовые детали\"");
-                stage.setScene(new Scene(root, 600, 644));
-                stage.show();
+                buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
             }
         });
     }

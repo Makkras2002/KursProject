@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerOfString.compareLines;
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
+import static sample.BaseButton.buttonAction;
+import static sample.BaseButton.closeWindow;
 
 public class DelMech {
 
@@ -51,29 +53,12 @@ public class DelMech {
                     errorCase();
                 }
                 else {
-                    Stage stage1 = (Stage) addButton.getScene().getWindow();
-                    stage1.close();
-                    Stage stage = new Stage();
-                    Parent root = null;
+                    closeWindow(addButton);
                     if(isMenuingSignal()){
-                        try {
-                            root = FXMLLoader.load(getClass().getResource("MainMenuAdm.fxml"));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        stage.setTitle("ООО \"Грузовые детали\"");
-                        stage.setScene(new Scene(root, 600, 644));
-                        stage.show();
+                        buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
                     }
                     if(isMenuingSignal() == false){
-                        try {
-                            root = FXMLLoader.load(getClass().getResource("MainMenuUser.fxml"));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        stage.setTitle("ООО \"Грузовые детали\"");
-                        stage.setScene(new Scene(root, 600, 644));
-                        stage.show();
+                        buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
                     }
                 }
 
@@ -84,18 +69,8 @@ public class DelMech {
         });
     }
     public void errorCase(){
-        Stage stage1 = (Stage) addButton.getScene().getWindow();
-        stage1.close();
-        Stage stage = new Stage();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("DataEnterErrorInTheRepeatings.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("Ошибка");
-        stage.setScene(new Scene(root, 470, 188));
-        stage.show();
+        closeWindow(addButton);
+        buttonAction("DataEnterErrorInTheRepeatings.fxml","Ошибка",470, 188);
     }
 }
 
