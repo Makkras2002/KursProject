@@ -1,5 +1,6 @@
 package sample;
 
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -7,6 +8,7 @@ import java.util.Set;
 
 import Server.UserData;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -42,17 +44,14 @@ public class ViewAdms {
     @FXML
     void initialize() {
         Gson gson=new Gson();
-        System.out.println(userDataInGson);
-        Set<UserData> admData = gson.fromJson(userDataInGson,Set.class);
+        Type userDataInGsonType = new TypeToken<Set<UserData>>(){}.getType();
+        Set<UserData> admData = gson.fromJson(userDataInGson,userDataInGsonType);
         for(UserData us : admData){
             System.out.println("Login - " + us.getLogin() +"\n" +"Password - " + us.getPassword() +"\n"+"________");
         }
-//        ObservableList<UserData> data = FXCollections.observableArrayList();
-
-//        data = gson.fromJson(userDataInGson, data.getClass());
 //        loginColomn.setCellValueFactory(new PropertyValueFactory<UserData,String>("login"));
 //        passwordColomn.setCellValueFactory(new PropertyValueFactory<UserData,String>("password"));
-//        table.setItems(data);
+//        table.setItems((admData);
         button.setOnAction((event) -> {
             closeWindow(button);
             buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
