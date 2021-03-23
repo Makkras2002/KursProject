@@ -1,6 +1,6 @@
 package sample;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -15,6 +15,7 @@ import static CheckersAndEts.CheckerOfString.compareLines;
 import static CheckersAndEts.CheckerAdmOrUs.isAddingSignalSignal;
 import static sample.BaseButton.buttonAction;
 import static sample.BaseButton.closeWindow;
+
 
 public class AddAdm {
 
@@ -42,6 +43,19 @@ public class AddAdm {
             else {
                 if(isAddingSignalSignal()){
                     closeWindow(addButton);
+                    String word = "addAdmin";
+                    try {
+                        Main.out.write(word +'\n');
+                        Main.out.flush();
+                        String serverWord = Main.in.readLine();
+                        System.out.println(serverWord);
+                        Main.out.write(login.getText() +'\n');
+                        Main.out.flush();
+                        Main.out.write(password.getText() + '\n');
+                        Main.out.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали1\"",600,644);
                 }
                 if(isAddingSignalSignal()==false){

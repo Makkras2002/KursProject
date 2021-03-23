@@ -1,0 +1,94 @@
+package Server;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MainServer {
+    private static Socket clientSocket;
+    private static ServerSocket server;
+    private static BufferedReader in;
+    private static BufferedWriter out;
+    public static void main(String[] args){
+        try {
+            server = new ServerSocket(8088);
+            System.out.println("Сервер запущен!");
+            boolean sign;
+            while (true){
+                clientSocket = server.accept();
+                System.out.println("Клиент подключился!");
+                in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+                sign = true;
+                while(sign){
+                    String word = in.readLine();
+                    System.out.println(word);
+                    switch (word){
+                        case "addAdmin":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String login = in.readLine();
+                            String password =in.readLine();
+                            AdminBaseController a1 =new AdminBaseController();
+                            a1.addAndSerialize(login,password);
+                            break;
+                        }
+                        case "checkAdminEnter":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String login = in.readLine();
+                            String password =in.readLine();
+                            AdminBaseController a1 = new AdminBaseController();
+                            if(a1.check(login,password)){
+                                out.write("Yes" +"\n");
+                                out.flush();
+                            }
+                            else {
+                                out.write("No" +"\n");
+                                out.flush();
+                            }
+                            break;
+                        }
+                        case "deleteAdmin":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String login = in.readLine();
+                            String password =in.readLine();
+                            AdminBaseController a1 = new AdminBaseController();
+                            if(a1.deleteAdmin(login,password)){
+                                out.write("Yes" +"\n");
+                                out.flush();
+                            }
+                            else {
+                                out.write("No" +"\n");
+                                out.flush();
+                            }
+                            break;
+                        }
+                        case "viewAdms":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            AdminBaseController a1 = new AdminBaseController();
+                            String gsonFormatData = a1.ConvertToJson();
+                            out.write( gsonFormatData + "\n");
+                            out.flush();
+                            break;
+                        }
+                        case "exit":{
+                            sign = false;
+                            break;
+                        }
+                        default:{
+                            break;
+                        }
+                    }
+                }
+                clientSocket.close();
+                in.close();
+                out.close();
+            }
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+    }
+}

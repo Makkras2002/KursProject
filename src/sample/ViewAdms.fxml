@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="488.0" prefWidth="511.0" style="-fx-background-color: aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewAdms">
+    <children>
+        <Label layoutX="153.0" layoutY="14.0" text="Администраторы" textFill="RED">
+            <font>
+                <Font name="System Italic" size="24.0" />
+            </font>
+        </Label>
+        <Button fx:id="button" layoutX="208.0" layoutY="426.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="94.0" stylesheets="@ButtonSettings.css" text="Button" />
+        <TableView fx:id="table" layoutX="32.0" layoutY="72.0" prefHeight="332.0" prefWidth="447.0">
+            <columns>
+                <TableColumn fx:id="loginColomn" prefWidth="222.4000358581543" text="Логин" />
+                <TableColumn fx:id="passwordColomn" prefWidth="225.5999755859375" text="Пароль" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

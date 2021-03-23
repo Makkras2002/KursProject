@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="644.0" prefWidth="600.0" style="-fx-background-color: aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainMenuAdm">
    <children>
       <Label layoutX="248.0" layoutY="28.0" text="Меню" textFill="#ff1010">
@@ -22,5 +21,7 @@
       <Button fx:id="delUser" layoutX="353.0" layoutY="364.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить пользователя" />
       <Button fx:id="delAdmin" layoutX="353.0" layoutY="427.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить  администратора" />
       <Button fx:id="exit" layoutX="203.0" layoutY="536.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
+      <Button fx:id="viewAdms" layoutX="349.0" layoutY="293.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Вывести всех администраторов" />
+      <Button fx:id="viewUsers" layoutX="349.0" layoutY="218.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Вывести всех пользователей" />
    </children>
 </AnchorPane>

@@ -1,10 +1,11 @@
 package sample;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import static CheckersAndEts.CheckerAdmOrUs.setAddingSignalSignal;
 import static CheckersAndEts.CheckerAdmOrUs.setMenuingSignal;
@@ -46,6 +47,14 @@ public class MainMenuAdm {
 
     @FXML
     private Button exit;
+
+    @FXML
+    private Button viewAdms;
+
+    @FXML
+    private Button viewUsers;
+
+    public static String userDataInGson;
 
     @FXML
     void initialize() {
@@ -90,8 +99,32 @@ public class MainMenuAdm {
             buttonAction("Method.fxml","Метод",525, 336);
         });
         exit.setOnAction((event) -> {
-            Stage stage1 = (Stage) exit.getScene().getWindow();
-            stage1.close();
+            String word = "exit";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            closeWindow(exit);
+        });
+        viewAdms.setOnAction((event) -> {
+            closeWindow(viewAdms);
+            String word = "viewAdms";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+                String serverWord = Main.in.readLine();
+                System.out.println(serverWord);
+                userDataInGson = Main.in.readLine();
+                buttonAction("ViewAdms.fxml","Администраторы",511, 488);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        viewUsers.setOnAction((event) -> {
+            closeWindow(viewAdms);
+            buttonAction("ViewUsers.fxml","Пользователи",511, 488);
         });
     }
 }

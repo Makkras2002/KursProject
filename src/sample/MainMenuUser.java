@@ -57,8 +57,7 @@ public class MainMenuUser {
             buttonAction("Method.fxml","Метод",525, 336);
         });
         exit.setOnAction((event) -> {
-            Stage stage1 = (Stage) exit.getScene().getWindow();
-            stage1.close();
+            closeWindow(exit);
         });
     }
 }
