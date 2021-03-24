@@ -124,7 +124,17 @@ public class MainMenuAdm {
         });
         viewUsers.setOnAction((event) -> {
             closeWindow(viewAdms);
-            buttonAction("ViewUsers.fxml","Пользователи",511, 488);
+            String word = "viewUsers";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+                String serverWord = Main.in.readLine();
+                System.out.println(serverWord);
+                userDataInGson = Main.in.readLine();
+                buttonAction("ViewUsers.fxml","Пользователи",511, 488);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 }

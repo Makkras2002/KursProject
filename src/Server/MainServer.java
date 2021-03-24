@@ -29,8 +29,17 @@ public class MainServer {
                             out.flush();
                             String login = in.readLine();
                             String password =in.readLine();
-                            AdminBaseController a1 =new AdminBaseController();
-                            a1.addAndSerialize(login,password);
+                            AuthorizationBaseController a1 =new AuthorizationBaseController();
+                            a1.addAndSerialize(login,password,"AdminBase.dat");
+                            break;
+                        }
+                        case "addUser":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String login = in.readLine();
+                            String password =in.readLine();
+                            AuthorizationBaseController a1 =new AuthorizationBaseController();
+                            a1.addAndSerialize(login,password,"UserBase.dat");
                             break;
                         }
                         case "checkAdminEnter":{
@@ -38,8 +47,40 @@ public class MainServer {
                             out.flush();
                             String login = in.readLine();
                             String password =in.readLine();
-                            AdminBaseController a1 = new AdminBaseController();
-                            if(a1.check(login,password)){
+                            AuthorizationBaseController a1 = new AuthorizationBaseController();
+                            if(a1.check(login,password,"AdminBase.dat")){
+                                out.write("Yes" +"\n");
+                                out.flush();
+                            }
+                            else {
+                                out.write("No" +"\n");
+                                out.flush();
+                            }
+                            break;
+                        }
+                        case "checkUserEnter":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String login = in.readLine();
+                            String password =in.readLine();
+                            AuthorizationBaseController a1 = new AuthorizationBaseController();
+                            if(a1.check(login,password,"UserBase.dat")){
+                                out.write("Yes" +"\n");
+                                out.flush();
+                            }
+                            else {
+                                out.write("No" +"\n");
+                                out.flush();
+                            }
+                            break;
+                        }
+                        case "deleteUser":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String login = in.readLine();
+                            String password =in.readLine();
+                            AuthorizationBaseController a1 = new AuthorizationBaseController();
+                            if(a1.deleteAdmin(login,password,"UserBase.dat")){
                                 out.write("Yes" +"\n");
                                 out.flush();
                             }
@@ -54,8 +95,8 @@ public class MainServer {
                             out.flush();
                             String login = in.readLine();
                             String password =in.readLine();
-                            AdminBaseController a1 = new AdminBaseController();
-                            if(a1.deleteAdmin(login,password)){
+                            AuthorizationBaseController a1 = new AuthorizationBaseController();
+                            if(a1.deleteAdmin(login,password,"AdminBase.dat")){
                                 out.write("Yes" +"\n");
                                 out.flush();
                             }
@@ -68,8 +109,17 @@ public class MainServer {
                         case "viewAdms":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
-                            AdminBaseController a1 = new AdminBaseController();
-                            String gsonFormatData = a1.ConvertToJson();
+                            AuthorizationBaseController a1 = new AuthorizationBaseController();
+                            String gsonFormatData = a1.ConvertToJson("AdminBase.dat");
+                            out.write( gsonFormatData + "\n");
+                            out.flush();
+                            break;
+                        }
+                        case "viewUsers":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            AuthorizationBaseController a1 = new AuthorizationBaseController();
+                            String gsonFormatData = a1.ConvertToJson("UserBase.dat");
                             out.write( gsonFormatData + "\n");
                             out.flush();
                             break;

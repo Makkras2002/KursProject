@@ -1,5 +1,6 @@
 package sample;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -57,6 +58,13 @@ public class MainMenuUser {
             buttonAction("Method.fxml","Метод",525, 336);
         });
         exit.setOnAction((event) -> {
+            String word = "exit";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             closeWindow(exit);
         });
     }

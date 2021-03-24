@@ -46,12 +46,11 @@ public class ViewAdms {
         Gson gson=new Gson();
         Type userDataInGsonType = new TypeToken<Set<UserData>>(){}.getType();
         Set<UserData> admData = gson.fromJson(userDataInGson,userDataInGsonType);
+        loginColomn.setCellValueFactory(new PropertyValueFactory<UserData,String>("login"));
+        passwordColomn.setCellValueFactory(new PropertyValueFactory<UserData,String>("password"));
         for(UserData us : admData){
-            System.out.println("Login - " + us.getLogin() +"\n" +"Password - " + us.getPassword() +"\n"+"________");
+            table.getItems().add(us);
         }
-//        loginColomn.setCellValueFactory(new PropertyValueFactory<UserData,String>("login"));
-//        passwordColomn.setCellValueFactory(new PropertyValueFactory<UserData,String>("password"));
-//        table.setItems((admData);
         button.setOnAction((event) -> {
             closeWindow(button);
             buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
