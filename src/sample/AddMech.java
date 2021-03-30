@@ -79,11 +79,14 @@ public class AddMech {
                         errorCase();
                     }
                     else {
-                        closeWindow(addButton);
                         if(isMenuingSignal()){
+                            servMessagePattern();
+                            closeWindow(addButton);
                             buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали0\"",600,644);
                         }
                         if(isMenuingSignal()==false){
+                            servMessagePattern();
+                            closeWindow(addButton);
                             buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали0\"",600,644);
                         }
 
@@ -102,5 +105,33 @@ public class AddMech {
     public void errorCase(){
         closeWindow(addButton);
         buttonAction("DataEnterErrorInTheRepeatings.fxml","Ошибка",470, 188);
+    }
+    public void servMessagePattern() {
+        String word = "addTransaction";
+        try {
+            Main.out.write(word +'\n');
+            Main.out.flush();
+            String serverWord = Main.in.readLine();
+            System.out.println(serverWord);
+            Main.out.write(nameMech.getText() +'\n');
+            Main.out.flush();
+            Main.out.write(category.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(price.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(sirname.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(name.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(buyer.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(amount.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(day.getText() +"."+month.getText() +"."+year.getText() + '\n');
+            Main.out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

@@ -24,6 +24,28 @@ public class MainServer {
                     String word = in.readLine();
                     System.out.println(word);
                     switch (word){
+                        case "addTransaction":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String nameOfPart = in.readLine();
+                            String category =in.readLine();
+                            String price =in.readLine();
+                            String sirname =in.readLine();
+                            String name =in.readLine();
+                            String buyer =in.readLine();
+                            String amount =in.readLine();
+                            String date =in.readLine();
+                            System.out.println("________________");
+                            System.out.println(nameOfPart);
+                            System.out.println(category);
+                            System.out.println(price);
+                            System.out.println(sirname +" "+name);
+                            System.out.println(buyer);
+                            System.out.println(amount);
+                            System.out.println(date);
+                            System.out.println("________________");
+                            break;
+                        }
                         case "addAdmin":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
