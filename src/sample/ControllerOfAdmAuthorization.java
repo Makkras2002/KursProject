@@ -40,51 +40,25 @@ public class ControllerOfAdmAuthorization {
             if(isSignal()){
                 String word = "checkAdminEnter";
                 String checkResult;
-                try {
-                    Main.out.write(word +'\n');
-                    Main.out.flush();
-                    String serverWord = Main.in.readLine();
-                    System.out.println(serverWord);
-                    Main.out.write(loginAdminTextField.getText() +'\n');
-                    Main.out.flush();
-                    Main.out.write(passwordAdminTextField.getText() + '\n');
-                    Main.out.flush();
-                    checkResult = Main.in.readLine();
-                    System.out.println(checkResult);
-                    if(checkResult.equals("Yes")){
-                        closeWindow(authorizationAdmButton);
-                        buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
-                    }
-                    else {
-                        errorCase();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                checkResult = serverCommunicationPattern(word);
+                if(checkResult.equals("Yes")){
+                    closeWindow(authorizationAdmButton);
+                    buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
+                }
+                else {
+                    errorCase();
                 }
             }
             if(isSignal() == false){
                 String word = "checkUserEnter";
                 String checkResult;
-                try {
-                    Main.out.write(word +'\n');
-                    Main.out.flush();
-                    String serverWord = Main.in.readLine();
-                    System.out.println(serverWord);
-                    Main.out.write(loginAdminTextField.getText() +'\n');
-                    Main.out.flush();
-                    Main.out.write(passwordAdminTextField.getText() + '\n');
-                    Main.out.flush();
-                    checkResult = Main.in.readLine();
-                    System.out.println(checkResult);
-                    if(checkResult.equals("Yes")){
-                        closeWindow(authorizationAdmButton);
-                        buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
-                    }
-                    else {
-                        errorCase();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                checkResult = serverCommunicationPattern(word);
+                if(checkResult.equals("Yes")){
+                    closeWindow(authorizationAdmButton);
+                    buttonAction("MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
+                }
+                else {
+                    errorCase();
                 }
             }
         });
@@ -92,6 +66,24 @@ public class ControllerOfAdmAuthorization {
     public void errorCase(){
         closeWindow(authorizationAdmButton);
         buttonAction("AuthError.fxml","Ошибка авторизации",247, 188);
+    }
+    private String serverCommunicationPattern(String word){
+        String checkResult = "No";
+        try {
+            Main.out.write(word +'\n');
+            Main.out.flush();
+            String serverWord = Main.in.readLine();
+            System.out.println(serverWord);
+            Main.out.write(loginAdminTextField.getText() +'\n');
+            Main.out.flush();
+            Main.out.write(passwordAdminTextField.getText() + '\n');
+            Main.out.flush();
+            checkResult = Main.in.readLine();
+            System.out.println(checkResult);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return checkResult;
     }
 }
 
