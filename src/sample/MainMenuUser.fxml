@@ -5,17 +5,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="644.0" prefWidth="600.0" style="-fx-background-color: aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainMenuUser">
+<AnchorPane prefHeight="644.0" prefWidth="600.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainMenuUser">
     <children>
-        <Label layoutX="248.0" layoutY="28.0" text="Меню" textFill="#ff1010">
+        <Label layoutX="106.0" layoutY="34.0" prefHeight="46.0" prefWidth="387.0" text="Меню пользователя" textFill="#ffe714">
             <font>
                 <Font name="Italic_IV50" size="36.0" />
             </font>
         </Label>
-        <Button fx:id="addInfo" layoutX="60.0" layoutY="127.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="193.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
-        <Button fx:id="delInfo" layoutX="57.0" layoutY="184.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
-        <Button fx:id="viewAll" layoutX="57.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
-        <Button fx:id="doMethod" layoutX="57.0" layoutY="305.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выполнить метод" />
-        <Button fx:id="exit" layoutX="203.0" layoutY="392.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
+        <Button fx:id="addInfo" layoutX="60.0" layoutY="127.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="193.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
+        <Button fx:id="delInfo" layoutX="57.0" layoutY="184.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
+        <Button fx:id="viewAll" layoutX="57.0" layoutY="248.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
+        <Button fx:id="doMethod" layoutX="57.0" layoutY="305.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выполнить метод" />
+        <Button fx:id="exit" layoutX="203.0" layoutY="392.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
     </children>
 </AnchorPane>

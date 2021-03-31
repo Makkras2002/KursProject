@@ -6,22 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="570.0" prefWidth="427.0" style="-fx-background-color: aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DelMech">
+<AnchorPane prefHeight="570.0" prefWidth="427.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DelMech">
     <children>
-        <Label layoutX="80.0" layoutY="14.0" prefHeight="38.0" prefWidth="266.0" text="Удаление данных из системы" textFill="RED">
+        <Label layoutX="73.0" layoutY="14.0" prefHeight="38.0" prefWidth="281.0" text="Удаление данных из системы" textFill="#ffee00">
             <font>
-                <Font name="System Italic" size="18.0" />
+                <Font name="System Italic" size="20.0" />
             </font>
         </Label>
-        <TextField fx:id="name" layoutX="38.0" layoutY="86.0" prefHeight="26.0" prefWidth="266.0" promptText="Введите название запчасти" />
-        <Button fx:id="addButton" layoutX="69.0" layoutY="412.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="289.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
-        <TextField fx:id="day" layoutX="38.0" layoutY="187.0" prefHeight="26.0" prefWidth="115.0" promptText="Введите день" />
-        <Label layoutX="38.0" layoutY="145.0" text="Дата заключения сделки" textFill="RED">
+        <TextField fx:id="name" layoutX="38.0" layoutY="86.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите название запчасти" />
+        <Button fx:id="addButton" layoutX="69.0" layoutY="412.0" mnemonicParsing="false" opacity="0.8" prefHeight="82.0" prefWidth="289.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
+        <TextField fx:id="day" layoutX="38.0" layoutY="187.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите день" />
+        <Label layoutX="20.0" layoutY="161.0" text="Дата заключения сделки" textFill="#ffcf00">
             <font>
-                <Font size="14.0" />
+                <Font name="System Bold Italic" size="16.0" />
             </font>
         </Label>
-        <TextField fx:id="month" layoutX="38.0" layoutY="238.0" prefHeight="26.0" prefWidth="115.0" promptText="Введите месяц" />
-        <TextField fx:id="year" layoutX="38.0" layoutY="285.0" prefHeight="26.0" prefWidth="115.0" promptText="Введите год" />
+        <TextField fx:id="month" layoutX="38.0" layoutY="238.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите месяц" />
+        <TextField fx:id="year" layoutX="38.0" layoutY="285.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите год" />
     </children>
 </AnchorPane>

@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="660.0" prefWidth="906.0" style="-fx-background-color: aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Table">
+<AnchorPane prefHeight="660.0" prefWidth="906.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Table">
    <children>
-      <Label layoutX="184.0" layoutY="14.0" text="Данные в табличном виде" textFill="RED">
+      <Label layoutX="254.0" layoutY="14.0" text="Данные в табличном виде" textFill="#ffd800">
          <font>
-            <Font name="Italic_IV50" size="24.0" />
+            <Font name="Italic_IV50" size="26.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="4.0" layoutY="71.0" prefHeight="522.0" prefWidth="894.0">
+      <TableView fx:id="table" layoutX="4.0" layoutY="71.0" opacity="0.9" prefHeight="522.0" prefWidth="894.0">
         <columns>
           <TableColumn fx:id="nameM" prefWidth="128.79998779296875" text="Название запчасти" />
           <TableColumn fx:id="Category" prefWidth="141.59996032714844" text="Категория запчасти" />
@@ -26,6 +26,6 @@
             <TableColumn fx:id="Date" prefWidth="123.2000732421875" text="Дата сделки" />
         </columns>
       </TableView>
-      <Button fx:id="tableButton" layoutX="273.0" layoutY="607.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Button" />
+      <Button fx:id="tableButton" layoutX="273.0" layoutY="607.0" mnemonicParsing="false" opacity="0.8" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
    </children>
 </AnchorPane>

@@ -5,14 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="188.0" prefWidth="247.0" style="-fx-background-color: aquamarine;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AuthError">
+<AnchorPane prefHeight="188.0" prefWidth="247.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@ErrorBackGroundSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AuthError">
    <children>
-      <Label layoutX="49.0" layoutY="24.0" text="Ошибка авторизации" textFill="RED">
+      <Label layoutX="35.0" layoutY="26.0" text="Ошибка авторизации" textFill="RED">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="authError" layoutX="72.0" layoutY="73.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="104.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+      <Button fx:id="authError" layoutX="71.0" layoutY="94.0" mnemonicParsing="false" opacity="0.7" prefHeight="61.0" prefWidth="104.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
    </children>
 </AnchorPane>
