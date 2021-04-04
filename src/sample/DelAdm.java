@@ -42,56 +42,40 @@ public class DelAdm {
             else {
                 if(isAddingSignalSignal()){
                     String word = "deleteAdmin";
-                    try {
-                        Main.out.write(word +'\n');
-                        Main.out.flush();
-                        String serverWord = Main.in.readLine();
-                        System.out.println(serverWord);
-                        Main.out.write(login.getText() +'\n');
-                        Main.out.flush();
-                        Main.out.write(password.getText() + '\n');
-                        Main.out.flush();
-                        String delRes = Main.in.readLine();
-                        System.out.println(delRes);
-                        if(delRes.equals("No")){
-                            errorCase();
-                        }
-                        else {
-                            closeWindow(addButton);
-                            buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали1\"",600, 644);
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    serverCommunicationMethod(word);
                 }
                 if(isAddingSignalSignal()==false){
                     String word = "deleteUser";
-                    try {
-                        Main.out.write(word +'\n');
-                        Main.out.flush();
-                        String serverWord = Main.in.readLine();
-                        System.out.println(serverWord);
-                        Main.out.write(login.getText() +'\n');
-                        Main.out.flush();
-                        Main.out.write(password.getText() + '\n');
-                        Main.out.flush();
-                        String delRes = Main.in.readLine();
-                        System.out.println(delRes);
-                        if(delRes.equals("No")){
-                            errorCase();
-                        }
-                        else {
-                            closeWindow(addButton);
-                            buttonAction("MainMenuAdm.fxml","ООО \"Грузовые детали1\"",600, 644);
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    serverCommunicationMethod(word);
                 }
 
             }
         });
     }
+
+    private void serverCommunicationMethod(String word) {
+        try {
+            Main.out.write(word + '\n');
+            Main.out.flush();
+            String serverWord = Main.in.readLine();
+            System.out.println(serverWord);
+            Main.out.write(login.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(password.getText() + '\n');
+            Main.out.flush();
+            String delRes = Main.in.readLine();
+            System.out.println(delRes);
+            if (delRes.equals("No")) {
+                errorCase();
+            } else {
+                closeWindow(addButton);
+                buttonAction("MainMenuAdm.fxml", "ООО \"Грузовые детали\"", 600, 644);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void errorCase(){
         closeWindow(addButton);
         buttonAction("DataEnterError.fxml","Ошибка",470, 188);
