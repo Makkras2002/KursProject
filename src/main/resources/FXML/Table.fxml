@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="660.0" prefWidth="906.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Table">
+   <children>
+      <Label layoutX="254.0" layoutY="14.0" text="Данные в табличном виде" textFill="#ffd800">
+         <font>
+            <Font name="Italic_IV50" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="4.0" layoutY="71.0" opacity="0.9" prefHeight="522.0" prefWidth="894.0">
+        <columns>
+          <TableColumn fx:id="nameM" prefWidth="128.79998779296875" text="Название запчасти" />
+          <TableColumn fx:id="Category" prefWidth="141.59996032714844" text="Категория запчасти" />
+            <TableColumn fx:id="Price" minWidth="0.0" prefWidth="75.20001220703125" text="Цена" />
+            <TableColumn fx:id="Amount" prefWidth="79.20001220703125" text="Кол-во" />
+            <TableColumn fx:id="Sirname" prefWidth="131.199951171875" text="Фамилия продавца" />
+            <TableColumn fx:id="Name" prefWidth="108.800048828125" text="Имя продавца" />
+            <TableColumn fx:id="Buyer" minWidth="0.0" prefWidth="109.59991455078125" text="Покупатель" />
+            <TableColumn fx:id="Date" prefWidth="123.2000732421875" text="Дата сделки" />
+        </columns>
+      </TableView>
+      <Button fx:id="tableButton" layoutX="273.0" layoutY="607.0" mnemonicParsing="false" opacity="0.8" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="188.0" prefWidth="247.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@ErrorBackGroundSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AuthError">
+   <children>
+      <Label layoutX="35.0" layoutY="26.0" text="Ошибка авторизации" textFill="RED">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="authError" layoutX="71.0" layoutY="94.0" mnemonicParsing="false" opacity="0.7" prefHeight="61.0" prefWidth="104.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+   </children>
+</AnchorPane>
