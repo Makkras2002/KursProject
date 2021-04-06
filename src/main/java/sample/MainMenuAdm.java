@@ -91,7 +91,16 @@ public class MainMenuAdm {
         viewAll.setOnAction((event) -> {
             setMenuingSignal(true);
             closeWindow(viewAll);
-            buttonAction("/FXML/Table.fxml","Данные",906, 660);
+            String word = "tableView";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+                String serverWord = Main.in.readLine();
+                System.out.println(serverWord);
+                buttonAction("/FXML/Table.fxml","Данные",906, 660);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         doMethod.setOnAction((event) -> {
             setMenuingSignal(true);

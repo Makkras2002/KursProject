@@ -1,9 +1,13 @@
 package Server;
 
+import Server.DAO.TransactionsDao;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainServer {
     private static Socket clientSocket;
@@ -36,14 +40,22 @@ public class MainServer {
                             String buyer =in.readLine();
                             String amount =in.readLine();
                             String date =in.readLine();
+                            SparePartSaleData dataToAdd = new SparePartSaleData(nameOfPart,
+                                    category,price,amount,sirname,name,buyer,date);
+                            TransactionsDao addInf = new TransactionsDao();
+                            addInf.addData(dataToAdd);
+                            break;
+                        }
+                        case "tableView":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            TransactionsDao baseInf = new TransactionsDao();
+                            List<SparePartSaleData> databaseInfoList = new ArrayList<>();
+                            databaseInfoList = baseInf.getAll();
                             System.out.println("________________");
-                            System.out.println(nameOfPart);
-                            System.out.println(category);
-                            System.out.println(price);
-                            System.out.println(sirname +" "+name);
-                            System.out.println(buyer);
-                            System.out.println(amount);
-                            System.out.println(date);
+                            for(SparePartSaleData a :databaseInfoList){
+                                System.out.println(a);
+                            }
                             System.out.println("________________");
                             break;
                         }
