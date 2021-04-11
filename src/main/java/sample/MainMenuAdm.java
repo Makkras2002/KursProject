@@ -11,6 +11,7 @@ import static CheckersAndEts.CheckerAdmOrUs.setAddingSignalSignal;
 import static CheckersAndEts.CheckerAdmOrUs.setMenuingSignal;
 import static sample.BaseButton.buttonAction;
 import static sample.BaseButton.closeWindow;
+import static CheckersAndEts.TransactionsDataInJson.transactionsDataInGson;
 
 
 public class MainMenuAdm {
@@ -97,7 +98,8 @@ public class MainMenuAdm {
                 Main.out.flush();
                 String serverWord = Main.in.readLine();
                 System.out.println(serverWord);
-                buttonAction("/FXML/Table.fxml","Данные",906, 660);
+                transactionsDataInGson = Main.in.readLine();
+                buttonAction("/FXML/Table.fxml","Данные",1150, 660);
             } catch (IOException e) {
                 e.printStackTrace();
             }

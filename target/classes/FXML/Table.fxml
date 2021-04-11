@@ -4,20 +4,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="660.0" prefWidth="906.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Table">
+<AnchorPane prefHeight="660.0" prefWidth="1150.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Table">
    <children>
       <Label layoutX="254.0" layoutY="14.0" text="Данные в табличном виде" textFill="#ffd800">
          <font>
             <Font name="Italic_IV50" size="26.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="4.0" layoutY="71.0" opacity="0.9" prefHeight="522.0" prefWidth="894.0">
+      <TableView fx:id="table" layoutX="4.0" layoutY="71.0" opacity="0.9" prefHeight="522.0" prefWidth="895.0">
         <columns>
-          <TableColumn fx:id="nameM" prefWidth="128.79998779296875" text="Название запчасти" />
-          <TableColumn fx:id="Category" prefWidth="141.59996032714844" text="Категория запчасти" />
+          <TableColumn fx:id="nameM" prefWidth="123.2000150680542" text="Название запчасти" />
+          <TableColumn fx:id="Category" prefWidth="147.1999969482422" text="Категория запчасти" />
             <TableColumn fx:id="Price" minWidth="0.0" prefWidth="75.20001220703125" text="Цена" />
             <TableColumn fx:id="Amount" prefWidth="79.20001220703125" text="Кол-во" />
             <TableColumn fx:id="Sirname" prefWidth="131.199951171875" text="Фамилия продавца" />
@@ -27,5 +28,17 @@
         </columns>
       </TableView>
       <Button fx:id="tableButton" layoutX="273.0" layoutY="607.0" mnemonicParsing="false" opacity="0.8" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+      <Button fx:id="searchButton" layoutX="949.0" layoutY="568.0" mnemonicParsing="false" opacity="0.8" prefHeight="26.0" prefWidth="170.0" stylesheets="@ButtonSettings.css" text="Осуществить поиск" />
+      <TextField fx:id="partNameSearchField" layoutX="943.0" layoutY="144.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Название запчасти" />
+      <TextField fx:id="partCategorySearchField" layoutX="943.0" layoutY="200.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Категория запчасти" />
+      <Label layoutX="994.0" layoutY="71.0" prefHeight="35.0" prefWidth="80.0" text="Поиск" textFill="#ffd400">
+         <font>
+            <Font name="Italic_IV50" size="24.0" />
+         </font></Label>
+      <TextField fx:id="partPriceSearchField" layoutX="943.0" layoutY="263.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Цена" />
+      <TextField fx:id="partSirnameSearchField" layoutX="943.0" layoutY="330.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Фамилия продавца" />
+      <TextField fx:id="partBuyerSearchField" layoutX="943.0" layoutY="388.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Покупатель" />
+      <TextField fx:id="partDateSearchField" layoutX="943.0" layoutY="452.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Дата сделки" />
+      <Button fx:id="refreshTableButton" layoutX="704.0" layoutY="607.0" mnemonicParsing="false" opacity="0.8" prefHeight="38.0" prefWidth="102.0" stylesheets="@ButtonSettings.css" text="Обновить" />
    </children>
 </AnchorPane>

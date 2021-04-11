@@ -21,15 +21,18 @@ public class TransactionsDao {
     }
     public void addData(SparePartSaleData dataToSave){
         try {
-            Statement statement= connection.createStatement();
+            PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO tr_table VALUES(?,?,?,?,?,?,?,?,?)");
             dataToSave.setId((int) (1+Math.random()*(10000)));
-            String SQL ="INSERT INTO tr_table VALUES("+dataToSave.getId()+",'"+
-                    dataToSave.getNameOfPart()+"','"+dataToSave.getCategory()+"','"+
-                    dataToSave.getPrice()+"','"+dataToSave.getAmount()+"','"+
-                    dataToSave.getSellerName()+"','"+
-                    dataToSave.getSellerSirname()+"','"+dataToSave.getBuyer()+"','"+
-                    dataToSave.getDate()+"')";
-            statement.executeUpdate(SQL);
+            preparedStatement.setInt(1,dataToSave.getId());
+            preparedStatement.setString(2,dataToSave.getNameOfPart());
+            preparedStatement.setString(3,dataToSave.getCategory());
+            preparedStatement.setString(4,dataToSave.getPrice());
+            preparedStatement.setString(5,dataToSave.getAmount());
+            preparedStatement.setString(6,dataToSave.getSellerName());
+            preparedStatement.setString(7,dataToSave.getSellerSirname());
+            preparedStatement.setString(8,dataToSave.getBuyer());
+            preparedStatement.setString(9,dataToSave.getDate());
+            preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

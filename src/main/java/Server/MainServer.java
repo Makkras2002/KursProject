@@ -1,6 +1,8 @@
 package Server;
 
 import Server.DAO.TransactionsDao;
+import com.google.gson.Gson;
+
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -46,17 +48,55 @@ public class MainServer {
                             addInf.addData(dataToAdd);
                             break;
                         }
+                        case "searchView":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String nameOfPart = in.readLine();
+                            String category =in.readLine();
+                            String price =in.readLine();
+                            String sirname =in.readLine();
+                            String buyer =in.readLine();
+                            String date =in.readLine();
+                            TransactionsDao baseInf = new TransactionsDao();
+                            List<SparePartSaleData> databaseInfoList = new ArrayList<>();
+                            databaseInfoList = baseInf.getAll();
+                            List<SparePartSaleData> searchResultList = new ArrayList<>();
+                            for(SparePartSaleData b : databaseInfoList){
+                                if((b.getNameOfPart().equals(nameOfPart)||nameOfPart.equals(""))&&
+                                        (b.getCategory().equals(category)||category.equals(""))&&
+                                        (b.getPrice().equals(price)||price.equals(""))&&
+                                        (b.getSellerSirname().equals(sirname)||sirname.equals(""))&&
+                                        (b.getBuyer().equals(buyer)||buyer.equals(""))&&
+                                        (b.getDate().equals(date)||date.equals(""))){
+                                    searchResultList.add(b);
+                                }
+                            }
+//                            System.out.println("________________");
+//                            for(SparePartSaleData a :searchResultList){
+//                                System.out.println(a);
+//                            }
+//                            System.out.println("________________");
+                            Gson gson = new Gson();
+                            String gsonFormatData = gson.toJson(searchResultList);
+                            out.write( gsonFormatData + "\n");
+                            out.flush();
+                            break;
+                        }
                         case "tableView":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
                             TransactionsDao baseInf = new TransactionsDao();
                             List<SparePartSaleData> databaseInfoList = new ArrayList<>();
                             databaseInfoList = baseInf.getAll();
-                            System.out.println("________________");
-                            for(SparePartSaleData a :databaseInfoList){
-                                System.out.println(a);
-                            }
-                            System.out.println("________________");
+//                            System.out.println("________________");
+//                            for(SparePartSaleData a :databaseInfoList){
+//                                System.out.println(a);
+//                            }
+//                            System.out.println("________________");
+                            Gson gson = new Gson();
+                            String gsonFormatData = gson.toJson(databaseInfoList);
+                            out.write( gsonFormatData + "\n");
+                            out.flush();
                             break;
                         }
                         case "addAdmin":{
