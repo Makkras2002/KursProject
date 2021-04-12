@@ -62,11 +62,11 @@ public class MainServer {
                             databaseInfoList = baseInf.getAll();
                             List<SparePartSaleData> searchResultList = new ArrayList<>();
                             for(SparePartSaleData b : databaseInfoList){
-                                if((b.getNameOfPart().equals(nameOfPart)||nameOfPart.equals(""))&&
-                                        (b.getCategory().equals(category)||category.equals(""))&&
+                                if(((b.getNameOfPart().contains(nameOfPart)&&nameOfPart.length()>1)||nameOfPart.equals(""))&&
+                                        ((b.getCategory().contains(category)&&category.length()>1)||category.equals(""))&&
                                         (b.getPrice().equals(price)||price.equals(""))&&
-                                        (b.getSellerSirname().equals(sirname)||sirname.equals(""))&&
-                                        (b.getBuyer().equals(buyer)||buyer.equals(""))&&
+                                        ((b.getSellerSirname().contains(sirname)&&sirname.length()>1)||sirname.equals(""))&&
+                                        ((b.getBuyer().contains(buyer)&&buyer.length()>1)||buyer.equals(""))&&
                                         (b.getDate().equals(date)||date.equals(""))){
                                     searchResultList.add(b);
                                 }
