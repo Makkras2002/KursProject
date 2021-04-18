@@ -7,6 +7,8 @@
     <groupId>sample</groupId>
     <artifactId>KursProject</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -19,6 +21,4 @@
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-    </dependencies>
 </project>

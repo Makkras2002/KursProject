@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="spring-boot-1.5.4.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-boot-1.5.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-boot-autoconfigure-1.5.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-context-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-core-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-data-commons-1.13.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-data-jpa-1.11.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-expression-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-jdbc-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-orm-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-tx-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-beans-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-aspects-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-aop-4.3.9.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

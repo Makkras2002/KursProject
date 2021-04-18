@@ -1,7 +1,10 @@
 package Server;
 
+import Server.DAO.SaveDataToRepo;
+import Server.DAO.SpareDataRepo;
 import Server.DAO.TransactionsDao;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.io.*;
@@ -11,7 +14,11 @@ import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class MainServer {
+
+
     private static Socket clientSocket;
     private static ServerSocket server;
     private static BufferedReader in;
@@ -45,7 +52,10 @@ public class MainServer {
                             SparePartSaleData dataToAdd = new SparePartSaleData(nameOfPart,
                                     category,price,amount,sirname,name,buyer,date);
                             TransactionsDao addInf = new TransactionsDao();
-                            addInf.addData(dataToAdd);
+                            SpareData spareData = new SpareData(new SparePart(nameOfPart,category,price),amount,
+                                    new Seller(sirname,name),buyer,date);
+                            SaveDataToRepo saveDataToRepo = new SaveDataToRepo();
+                            saveDataToRepo.save(spareData);
                             break;
                         }
                         case "searchView":{

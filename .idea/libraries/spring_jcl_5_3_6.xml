@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="spring-jcl-5.3.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-jcl-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-expression-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-expression-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-data-jpa-1.11.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-data-commons-1.13.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-core-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-core-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-context-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-context-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-boot-autoconfigure-1.5.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-boot-2.4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-boot-1.5.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-aop-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-aop-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-aspects-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-beans-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-beans-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-boot-autoconfigure-2.4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-jdbc-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-orm-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-web-5.3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-tx-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../foulder1.1/jar_files/spring-webmvc-5.3.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

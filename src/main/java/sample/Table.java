@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import Server.DAO.SpareDataRepo;
+import Server.SpareData;
 import Server.SparePartSaleData;
 import Server.UserData;
 import com.google.gson.Gson;
@@ -16,6 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
 import static sample.BaseButton.buttonAction;
@@ -83,6 +86,7 @@ public class Table {
 
     @FXML
     private Button refreshTableButton;
+
 
     @FXML
     void initialize() {

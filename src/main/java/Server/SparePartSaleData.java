@@ -2,6 +2,7 @@ package Server;
 
 import java.util.Objects;
 
+
 public class SparePartSaleData extends TransactionData{
     private Integer id;
     private String nameOfPart;
