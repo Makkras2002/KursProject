@@ -1,10 +1,7 @@
 package Server;
 
-import Server.DAO.SaveDataToRepo;
-import Server.DAO.SpareDataRepo;
-import Server.DAO.TransactionsDao;
+import Server.DAO.DataDao;
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.io.*;
@@ -49,43 +46,57 @@ public class MainServer {
                             String buyer =in.readLine();
                             String amount =in.readLine();
                             String date =in.readLine();
-                            SparePartSaleData dataToAdd = new SparePartSaleData(nameOfPart,
-                                    category,price,amount,sirname,name,buyer,date);
-                            TransactionsDao addInf = new TransactionsDao();
                             SpareData spareData = new SpareData(new SparePart(nameOfPart,category,price),amount,
                                     new Seller(sirname,name),buyer,date);
-                            SaveDataToRepo saveDataToRepo = new SaveDataToRepo();
-                            saveDataToRepo.save(spareData);
+                            DataDao dataDao = new DataDao();
+                            dataDao.savaData(spareData);
+                            break;
+                        }
+                        case "deleteTransaction":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String name = in.readLine();
+                            String id = in.readLine();
+                            DataDao baseInf = new DataDao();
+                            List<SpareData> databaseInfoList = new ArrayList<>();
+                            databaseInfoList = baseInf.getAll();
+                            SpareData dataToDelete = new SpareData();
+                            String s;
+                            for (SpareData a: databaseInfoList){
+                                if(a.getPart().getName().equals(name)
+                                        && (s = String.valueOf(a.getData_id())).equals(id)){
+                                    dataToDelete = a;
+                                    break;
+                                }
+                            }
+                            baseInf.deleteData(dataToDelete);
                             break;
                         }
                         case "searchView":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
+                            String partId = in.readLine();
                             String nameOfPart = in.readLine();
                             String category =in.readLine();
                             String price =in.readLine();
                             String sirname =in.readLine();
                             String buyer =in.readLine();
                             String date =in.readLine();
-                            TransactionsDao baseInf = new TransactionsDao();
-                            List<SparePartSaleData> databaseInfoList = new ArrayList<>();
+                            DataDao baseInf = new DataDao();
+                            List<SpareData> databaseInfoList;
                             databaseInfoList = baseInf.getAll();
-                            List<SparePartSaleData> searchResultList = new ArrayList<>();
-                            for(SparePartSaleData b : databaseInfoList){
-                                if(((b.getNameOfPart().contains(nameOfPart)&&nameOfPart.length()>1)||nameOfPart.equals(""))&&
-                                        ((b.getCategory().contains(category)&&category.length()>1)||category.equals(""))&&
-                                        (b.getPrice().equals(price)||price.equals(""))&&
-                                        ((b.getSellerSirname().contains(sirname)&&sirname.length()>1)||sirname.equals(""))&&
+                            List<SpareData> searchResultList = new ArrayList<>();
+                            String s;
+                            for(SpareData b : databaseInfoList){
+                                if(((s = String.valueOf(b.getData_id())).equals(partId) ||partId.equals(""))&&((b.getPart().getName().contains(nameOfPart)&&nameOfPart.length()>1)||nameOfPart.equals(""))&&
+                                        ((b.getPart().getCategory().contains(category)&&category.length()>1)||category.equals(""))&&
+                                        (b.getPart().getPrice().equals(price)||price.equals(""))&&
+                                        ((b.getSeller().getSirname().contains(sirname)&&sirname.length()>1)||sirname.equals(""))&&
                                         ((b.getBuyer().contains(buyer)&&buyer.length()>1)||buyer.equals(""))&&
                                         (b.getDate().equals(date)||date.equals(""))){
                                     searchResultList.add(b);
                                 }
                             }
-//                            System.out.println("________________");
-//                            for(SparePartSaleData a :searchResultList){
-//                                System.out.println(a);
-//                            }
-//                            System.out.println("________________");
                             Gson gson = new Gson();
                             String gsonFormatData = gson.toJson(searchResultList);
                             out.write( gsonFormatData + "\n");
@@ -95,14 +106,9 @@ public class MainServer {
                         case "tableView":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
-                            TransactionsDao baseInf = new TransactionsDao();
-                            List<SparePartSaleData> databaseInfoList = new ArrayList<>();
+                            DataDao baseInf = new DataDao();
+                            List<SpareData> databaseInfoList = new ArrayList<>();
                             databaseInfoList = baseInf.getAll();
-//                            System.out.println("________________");
-//                            for(SparePartSaleData a :databaseInfoList){
-//                                System.out.println(a);
-//                            }
-//                            System.out.println("________________");
                             Gson gson = new Gson();
                             String gsonFormatData = gson.toJson(databaseInfoList);
                             out.write( gsonFormatData + "\n");

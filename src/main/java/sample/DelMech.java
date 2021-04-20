@@ -1,6 +1,7 @@
 package sample;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -24,39 +25,43 @@ public class DelMech {
     private TextField name;
 
     @FXML
+    private TextField idField;
+
+    @FXML
     private Button addButton;
 
-    @FXML
-    private TextField day;
-
-    @FXML
-    private TextField month;
-
-    @FXML
-    private TextField year;
 
     @FXML
     void initialize() {
         addButton.setOnAction((event) -> {
-            if(compareLines(name.getText(),"")||compareLines(day.getText(),"")
-                    ||compareLines(month.getText(),"")||compareLines(year.getText(),"")){
+            if(compareLines(name.getText(),"") ||compareLines(idField.getText(),"")){
                 errorCase();
                 return;
             }
-            if((day.getText()).matches("-?([1-9][0-9]*)?")&&(month.getText()).matches("-?([1-9][0-9]*)?")
-                    &&(year.getText()).matches("-?([1-9][0-9]*)?")){
-                if(Integer.valueOf(day.getText())<1||Integer.valueOf(day.getText())>31||Integer.valueOf(month.getText())<1||
-                        Integer.valueOf(month.getText())>12 ||Integer.valueOf(year.getText())<1970){
-
+            if(idField.getText().matches("-?([1-9][0-9]*)?")){
+                if(Integer.valueOf(idField.getText())<1){
                     errorCase();
                 }
                 else {
-                    closeWindow(addButton);
-                    if(isMenuingSignal()){
-                        buttonAction("/FXML/MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
-                    }
-                    if(isMenuingSignal() == false){
-                        buttonAction("/FXML/MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
+                    String word = "deleteTransaction";
+                    try {
+                        Main.out.write(word + '\n');
+                        Main.out.flush();
+                        String serverWord = Main.in.readLine();
+                        System.out.println(serverWord);
+                        Main.out.write(name.getText() + '\n');
+                        Main.out.flush();
+                        Main.out.write(idField.getText() + '\n');
+                        Main.out.flush();
+                        closeWindow(addButton);
+                        if(isMenuingSignal()){
+                            buttonAction("/FXML/MainMenuAdm.fxml","ООО \"Грузовые детали\"",600, 644);
+                        }
+                        if(isMenuingSignal() == false){
+                            buttonAction("/FXML/MainMenuUser.fxml","ООО \"Грузовые детали\"",600, 644);
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
 

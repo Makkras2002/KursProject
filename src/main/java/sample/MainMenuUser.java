@@ -58,7 +58,7 @@ public class MainMenuUser {
                 String serverWord = Main.in.readLine();
                 System.out.println(serverWord);
                 transactionsDataInGson = Main.in.readLine();
-                buttonAction("/FXML/Table.fxml","Данные",1150, 660);
+                buttonAction("/FXML/Table.fxml","Данные",1200, 700);
             } catch (IOException e) {
                 e.printStackTrace();
             }

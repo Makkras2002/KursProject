@@ -5,25 +5,26 @@ import java.util.Objects;
 
 
 
-@Entity()
+@Entity
 @Table(name = "data_table")
 public class SpareData {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "data_id")
     private Integer data_id;
 
-    @Column
+    @Column(name = "amount")
     private String amount;
-    @Column
+    @Column(name = "buyer")
     private String buyer;
-    @Column
+    @Column(name ="date")
     private String date;
 
-    @OneToOne(fetch =FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL,fetch =FetchType.EAGER)
     @JoinColumn(name = "part_id")
     private SparePart part;
 
-    @OneToOne(fetch =FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL,fetch =FetchType.EAGER)
     @JoinColumn(name = "seller_id")
     private Seller seller;
 

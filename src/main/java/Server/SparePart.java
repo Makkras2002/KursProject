@@ -8,14 +8,15 @@ import java.util.Objects;
 @Table(name = "part_table")
 public class SparePart {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "part_id")
     private Integer part_id;
 
-    @Column
+    @Column(name = "name")
     private String name;
-    @Column
+    @Column(name = "category")
     private String category;
-    @Column
+    @Column(name = "price")
     private String price;
 
     public String getName() {

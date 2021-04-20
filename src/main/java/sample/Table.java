@@ -3,13 +3,12 @@ package sample;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import Server.DAO.SpareDataRepo;
+import CheckersAndEts.CarcassForTabel;
 import Server.SpareData;
-import Server.SparePartSaleData;
-import Server.UserData;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
@@ -18,7 +17,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
 import static sample.BaseButton.buttonAction;
@@ -34,37 +32,43 @@ public class Table {
     private URL location;
 
     @FXML
-    private TableView<SparePartSaleData> table;
+    private TableView<CarcassForTabel> table;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> nameM;
+    private TableColumn<CarcassForTabel,Integer> idColomn;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Category;
+    private TableColumn<CarcassForTabel, String> nameM;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Price;
+    private TableColumn<CarcassForTabel, String> Category;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Amount;
+    private TableColumn<CarcassForTabel, String> Price;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Sirname;
+    private TableColumn<CarcassForTabel, String> Amount;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Name;
+    private TableColumn<CarcassForTabel, String> Sirname;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Buyer;
+    private TableColumn<CarcassForTabel, String> Name;
 
     @FXML
-    private TableColumn<SparePartSaleData, String> Date;
+    private TableColumn<CarcassForTabel, String> Buyer;
+
+    @FXML
+    private TableColumn<CarcassForTabel, String> Date;
 
     @FXML
     private Button tableButton;
 
     @FXML
     private Button searchButton;
+
+    @FXML
+    private TextField partIdSearchField;
 
     @FXML
     private TextField partNameSearchField;
@@ -91,17 +95,24 @@ public class Table {
     @FXML
     void initialize() {
         Gson gson=new Gson();
-        Type trDataInGsonType = new TypeToken<Set<SparePartSaleData>>(){}.getType();
-        Set<SparePartSaleData> trData = gson.fromJson(transactionsDataInGson,trDataInGsonType);
-        nameM.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("nameOfPart"));
-        Category.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("category"));
-        Price.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("price"));
-        Amount.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("amount"));
-        Sirname.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("sellerSirname"));
-        Name.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("sellerName"));
-        Buyer.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("buyer"));
-        Date.setCellValueFactory(new PropertyValueFactory<SparePartSaleData,String>("date"));
-        for(SparePartSaleData a: trData){
+        Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
+        Set<SpareData> trData = gson.fromJson(transactionsDataInGson,trDataInGsonType);
+        Set<CarcassForTabel> viewSet = new HashSet<>();
+        for(SpareData a: trData){
+            viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
+                    a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
+                    a.getSeller().getName(),a.getBuyer(),a.getDate()));
+        }
+        idColomn.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,Integer>("id"));
+        nameM.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("nameOfPart"));
+        Category.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("category"));
+        Price.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("price"));
+        Amount.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("amount"));
+        Sirname.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("sellerSirname"));
+        Name.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("sellerName"));
+        Buyer.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("buyer"));
+        Date.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("date"));
+        for(CarcassForTabel a: viewSet){
             table.getItems().add(a);
         }
         refreshTableButton.setOnAction((event)->{
@@ -113,9 +124,15 @@ public class Table {
                 System.out.println(serverWord);
                 String refreshedData;
                 refreshedData = Main.in.readLine();
-                Set<SparePartSaleData> trDataRefreshed = gson.fromJson(refreshedData,trDataInGsonType);
+                Set<SpareData> trDataRefreshed = gson.fromJson(refreshedData,trDataInGsonType);
                 clearTable();
-                for(SparePartSaleData a: trDataRefreshed){
+                viewSet.clear();
+                for(SpareData a: trDataRefreshed){
+                    viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
+                            a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
+                            a.getSeller().getName(),a.getBuyer(),a.getDate()));
+                }
+                for(CarcassForTabel a: viewSet){
                     table.getItems().add(a);
                 }
             } catch (IOException e) {
@@ -129,6 +146,8 @@ public class Table {
                 Main.out.flush();
                 String serverWord = Main.in.readLine();
                 System.out.println(serverWord);
+                Main.out.write(partIdSearchField.getText() + '\n');
+                Main.out.flush();
                 Main.out.write(partNameSearchField.getText() + '\n');
                 Main.out.flush();
                 Main.out.write(partCategorySearchField.getText() + '\n');
@@ -143,9 +162,15 @@ public class Table {
                 Main.out.flush();
                 String foundData;
                 foundData = Main.in.readLine();
-                Set<SparePartSaleData> trDataFound = gson.fromJson(foundData,trDataInGsonType);
+                Set<SpareData> trDataFound = gson.fromJson(foundData,trDataInGsonType);
                 clearTable();
-                for(SparePartSaleData a: trDataFound){
+                viewSet.clear();
+                for(SpareData a: trDataFound){
+                    viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
+                            a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
+                            a.getSeller().getName(),a.getBuyer(),a.getDate()));
+                }
+                for(CarcassForTabel a: viewSet){
                     table.getItems().add(a);
                 }
             } catch (IOException e) {

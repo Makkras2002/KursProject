@@ -8,12 +8,13 @@ import java.util.Objects;
 @Table(name = "seller_table")
 public class Seller {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "seller_id")
     private Integer seller_id;
 
-    @Column
+    @Column(name = "sirname")
     private String sirname;
-    @Column
+    @Column(name = "name")
     private String name;
 
     public Seller(String sirname, String name) {
