@@ -19,6 +19,8 @@ public class SpareData {
     private String buyer;
     @Column(name ="date")
     private String date;
+    @Column(name = "mark")
+    private String mark;
 
     @OneToOne(cascade=CascadeType.ALL,fetch =FetchType.EAGER)
     @JoinColumn(name = "part_id")
@@ -32,12 +34,13 @@ public class SpareData {
     public SpareData(){
     }
 
-    public SpareData(SparePart part, String amount, Seller seller, String buyer, String date) {
+    public SpareData(SparePart part, String amount, Seller seller, String buyer, String date,String mark) {
         this.part = part;
         this.amount = amount;
         this.seller = seller;
         this.buyer = buyer;
         this.date = date;
+        this.mark = mark;
     }
 
     public long getData_id() {
@@ -88,12 +91,20 @@ public class SpareData {
         this.date = date;
     }
 
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SpareData spareData = (SpareData) o;
-        return Objects.equals(part, spareData.part) && Objects.equals(amount, spareData.amount) && Objects.equals(seller, spareData.seller) && Objects.equals(buyer, spareData.buyer) && Objects.equals(date, spareData.date);
+        return Objects.equals(part, spareData.part) && Objects.equals(amount, spareData.amount) && Objects.equals(seller, spareData.seller) && Objects.equals(buyer, spareData.buyer) && Objects.equals(date, spareData.date) && Objects.equals(mark,spareData.mark);
     }
 
     @Override
@@ -110,6 +121,7 @@ public class SpareData {
                 ", date='" + date + '\'' +
                 ", part=" + part +
                 ", seller=" + seller +
+                ", seller=" + mark +
                 '}';
     }
 }

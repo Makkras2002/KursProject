@@ -3,8 +3,12 @@ package sample;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 import static CheckersAndEts.CheckerOfString.compareLines;
@@ -53,14 +57,18 @@ public class AddMech {
     @FXML
     private TextField year;
 
+    @FXML
+    private ChoiceBox<String> choiceBox;
 
     @FXML
     void initialize() {
+        ObservableList<String> choiceB = FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10");
+        choiceBox.setItems(choiceB);
         addButton.setOnAction((event) -> {
             if(compareLines(name.getText(),"")||compareLines(nameMech.getText(),"")||compareLines(category.getText(),"")||compareLines(price.getText(),"")
                     ||compareLines(sirname.getText(),"")||compareLines(buyer.getText(),"")
                     ||compareLines(amount.getText(),"")||compareLines(day.getText(),"")
-                    ||compareLines(month.getText(),"")||compareLines(year.getText(),"")){
+                    ||compareLines(month.getText(),"")||compareLines(year.getText(),"")||choiceBox.getValue()== null){
 
                 errorCase();
             }
@@ -124,6 +132,8 @@ public class AddMech {
             Main.out.write(amount.getText() + '\n');
             Main.out.flush();
             Main.out.write(day.getText() +"."+month.getText() +"."+year.getText() + '\n');
+            Main.out.flush();
+            Main.out.write(choiceBox.getValue() +'\n');
             Main.out.flush();
         } catch (IOException e) {
             e.printStackTrace();

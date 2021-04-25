@@ -10,6 +10,7 @@ public class CarcassForTabel {
     private String sellerName;
     private String buyer;
     private String date;
+    private String mark;
 
     public Integer getId() {
         return id;
@@ -17,6 +18,14 @@ public class CarcassForTabel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getMark() {
+        return mark;
+    }
+
+    public void setMark(String mark) {
+        this.mark = mark;
     }
 
     public String getNameOfPart() {
@@ -84,7 +93,7 @@ public class CarcassForTabel {
     }
 
     public CarcassForTabel(Integer id,String nameOfPart, String category, String price,String amount,String sellerSirname,
-                           String sellerName, String buyer, String date) {
+                           String sellerName, String buyer, String date,String mark) {
         this.id = id;
         this.nameOfPart = nameOfPart;
         this.category = category;
@@ -94,6 +103,7 @@ public class CarcassForTabel {
         this.sellerName = sellerName;
         this.buyer = buyer;
         this.date = date;
+        this.mark = mark;
     }
     public CarcassForTabel(){
     }

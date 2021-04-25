@@ -41,7 +41,7 @@ public class MainMenuUser {
         addInfo.setOnAction((event) -> {
             setMenuingSignal(false);
             closeWindow(addInfo);
-            buttonAction("/FXML/AddMech.fxml","Добавление данных о заключенной сделке",427, 570);
+            buttonAction("/FXML/AddMech.fxml","Добавление данных о заключенной сделке",427, 620);
         });
         delInfo.setOnAction((event) -> {
             setMenuingSignal(false);
@@ -58,7 +58,7 @@ public class MainMenuUser {
                 String serverWord = Main.in.readLine();
                 System.out.println(serverWord);
                 transactionsDataInGson = Main.in.readLine();
-                buttonAction("/FXML/Table.fxml","Данные",1200, 700);
+                buttonAction("/FXML/Table.fxml","Данные",1337, 700);
             } catch (IOException e) {
                 e.printStackTrace();
             }

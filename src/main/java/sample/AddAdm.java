@@ -3,8 +3,12 @@ package sample;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 import static CheckersAndEts.CheckerOfString.compareLines;
@@ -29,6 +33,8 @@ public class AddAdm {
 
     @FXML
     private Button addButton;
+
+
 
     @FXML
     void initialize() {

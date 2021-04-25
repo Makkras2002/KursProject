@@ -1,33 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="570.0" prefWidth="427.0" style="-fx-background-size: 100%  100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddMech">
+<AnchorPane prefHeight="620.0" prefWidth="427.0" style="-fx-background-size: 100%  100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddMech">
    <children>
       <Label layoutX="26.0" layoutY="14.0" prefHeight="38.0" prefWidth="375.0" text="Добавление данных о сделке в систему" textFill="#fffb00">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="nameMech" layoutX="38.0" layoutY="86.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите название запчасти" />
-      <TextField fx:id="category" layoutX="38.0" layoutY="133.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите категорию запчастей" />
-      <TextField fx:id="price" layoutX="38.0" layoutY="186.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите общую стоимость запчастей " />
-      <TextField fx:id="sirname" layoutX="38.0" layoutY="278.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите Фамилию продавца" />
-      <TextField fx:id="name" layoutX="38.0" layoutY="324.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите имя продавца" />
-      <TextField fx:id="buyer" layoutX="38.0" layoutY="372.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите имя покупателя(название фирмы)" />
-      <TextField fx:id="amount" layoutX="38.0" layoutY="234.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите кол-во купленных запчастей" />
-      <Button fx:id="addButton" layoutX="234.0" layoutY="451.0" mnemonicParsing="false" opacity="0.8" prefHeight="82.0" prefWidth="139.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
-      <TextField fx:id="day" layoutX="38.0" layoutY="444.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите день" />
-      <Label layoutX="38.0" layoutY="410.0" text="Дата заключения сделки" textFill="#fff300">
+      <TextField fx:id="nameMech" layoutX="38.0" layoutY="66.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите название запчасти" />
+      <TextField fx:id="category" layoutX="38.0" layoutY="108.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите категорию запчастей" />
+      <TextField fx:id="price" layoutX="38.0" layoutY="149.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите общую стоимость запчастей " />
+      <TextField fx:id="sirname" layoutX="38.0" layoutY="252.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите Фамилию продавца" />
+      <TextField fx:id="name" layoutX="38.0" layoutY="302.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите имя продавца" />
+      <TextField fx:id="buyer" layoutX="38.0" layoutY="344.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите имя покупателя(название фирмы)" />
+      <TextField fx:id="amount" layoutX="38.0" layoutY="198.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите кол-во купленных запчастей" />
+      <Button fx:id="addButton" layoutX="234.0" layoutY="497.0" mnemonicParsing="false" opacity="0.8" prefHeight="82.0" prefWidth="139.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
+      <TextField fx:id="day" layoutX="38.0" layoutY="477.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите день" />
+      <Label layoutX="38.0" layoutY="436.0" text="Дата заключения сделки" textFill="#fff300">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="month" layoutX="38.0" layoutY="479.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите месяц" />
-      <TextField fx:id="year" layoutX="38.0" layoutY="512.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите год" />
+      <TextField fx:id="month" layoutX="38.0" layoutY="511.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите месяц" />
+      <TextField fx:id="year" layoutX="38.0" layoutY="546.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите год" />
+      <ChoiceBox fx:id="choiceBox" layoutX="38.0" layoutY="410.0" prefWidth="150.0" />
+      <Label layoutX="38.0" layoutY="383.0" text="Экспертная оценка" textFill="#ffe200">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

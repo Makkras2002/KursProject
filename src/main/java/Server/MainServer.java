@@ -46,8 +46,9 @@ public class MainServer {
                             String buyer =in.readLine();
                             String amount =in.readLine();
                             String date =in.readLine();
+                            String mark =in.readLine();
                             SpareData spareData = new SpareData(new SparePart(nameOfPart,category,price),amount,
-                                    new Seller(sirname,name),buyer,date);
+                                    new Seller(sirname,name),buyer,date,mark);
                             DataDao dataDao = new DataDao();
                             dataDao.savaData(spareData);
                             break;
@@ -82,6 +83,7 @@ public class MainServer {
                             String sirname =in.readLine();
                             String buyer =in.readLine();
                             String date =in.readLine();
+                            String mark =in.readLine();
                             DataDao baseInf = new DataDao();
                             List<SpareData> databaseInfoList;
                             databaseInfoList = baseInf.getAll();
@@ -93,7 +95,7 @@ public class MainServer {
                                         (b.getPart().getPrice().equals(price)||price.equals(""))&&
                                         ((b.getSeller().getSirname().contains(sirname)&&sirname.length()>1)||sirname.equals(""))&&
                                         ((b.getBuyer().contains(buyer)&&buyer.length()>1)||buyer.equals(""))&&
-                                        (b.getDate().equals(date)||date.equals(""))){
+                                        (b.getDate().equals(date)||date.equals(""))&&(b.getMark().equals(mark)||mark==null||mark.equals("-"))){
                                     searchResultList.add(b);
                                 }
                             }

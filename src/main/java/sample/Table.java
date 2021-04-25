@@ -11,11 +11,10 @@ import CheckersAndEts.CarcassForTabel;
 import Server.SpareData;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
@@ -62,6 +61,9 @@ public class Table {
     private TableColumn<CarcassForTabel, String> Date;
 
     @FXML
+    private TableColumn<CarcassForTabel, String> mark;
+
+    @FXML
     private Button tableButton;
 
     @FXML
@@ -91,9 +93,13 @@ public class Table {
     @FXML
     private Button refreshTableButton;
 
+    @FXML
+    private ChoiceBox<String> choiceBox;
 
     @FXML
     void initialize() {
+        ObservableList<String> choiceB = FXCollections.observableArrayList("-","1","2","3","4","5","6","7","8","9","10");
+        choiceBox.setItems(choiceB);
         Gson gson=new Gson();
         Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
         Set<SpareData> trData = gson.fromJson(transactionsDataInGson,trDataInGsonType);
@@ -101,7 +107,7 @@ public class Table {
         for(SpareData a: trData){
             viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                     a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                    a.getSeller().getName(),a.getBuyer(),a.getDate()));
+                    a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
         }
         idColomn.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,Integer>("id"));
         nameM.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("nameOfPart"));
@@ -112,6 +118,7 @@ public class Table {
         Name.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("sellerName"));
         Buyer.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("buyer"));
         Date.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("date"));
+        mark.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("mark"));
         for(CarcassForTabel a: viewSet){
             table.getItems().add(a);
         }
@@ -130,7 +137,7 @@ public class Table {
                 for(SpareData a: trDataRefreshed){
                     viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                             a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                            a.getSeller().getName(),a.getBuyer(),a.getDate()));
+                            a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
                 }
                 for(CarcassForTabel a: viewSet){
                     table.getItems().add(a);
@@ -160,6 +167,8 @@ public class Table {
                 Main.out.flush();
                 Main.out.write(partDateSearchField.getText() + '\n');
                 Main.out.flush();
+                Main.out.write(choiceBox.getValue() + '\n');
+                Main.out.flush();
                 String foundData;
                 foundData = Main.in.readLine();
                 Set<SpareData> trDataFound = gson.fromJson(foundData,trDataInGsonType);
@@ -168,7 +177,7 @@ public class Table {
                 for(SpareData a: trDataFound){
                     viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                             a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                            a.getSeller().getName(),a.getBuyer(),a.getDate()));
+                            a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
                 }
                 for(CarcassForTabel a: viewSet){
                     table.getItems().add(a);
