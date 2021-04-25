@@ -14,7 +14,7 @@
                 <Font name="System Italic" size="26.0" />
             </font>
         </Label>
-        <Button fx:id="button" layoutX="208.0" layoutY="426.0" mnemonicParsing="false" opacity="0.8" prefHeight="48.0" prefWidth="94.0" stylesheets="@ButtonSettings.css" text="Button" />
+        <Button fx:id="button" layoutX="208.0" layoutY="426.0" mnemonicParsing="false" opacity="0.8" prefHeight="48.0" prefWidth="94.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
         <TableView fx:id="table" layoutX="32.0" layoutY="72.0" opacity="0.9" prefHeight="332.0" prefWidth="447.0">
             <columns>
                 <TableColumn fx:id="loginColomn" prefWidth="222.4000358581543" text="Логин" />
