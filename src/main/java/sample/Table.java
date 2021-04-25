@@ -79,6 +79,9 @@ public class Table {
     private TextField partCategorySearchField;
 
     @FXML
+    private TextField partPriceMinSearchField;
+
+    @FXML
     private TextField partPriceSearchField;
 
     @FXML
@@ -96,10 +99,12 @@ public class Table {
     @FXML
     private ChoiceBox<String> choiceBox;
 
+
     @FXML
     void initialize() {
         ObservableList<String> choiceB = FXCollections.observableArrayList("-","1","2","3","4","5","6","7","8","9","10");
         choiceBox.setItems(choiceB);
+        choiceBox.setValue("-");
         Gson gson=new Gson();
         Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
         Set<SpareData> trData = gson.fromJson(transactionsDataInGson,trDataInGsonType);
@@ -158,6 +163,8 @@ public class Table {
                 Main.out.write(partNameSearchField.getText() + '\n');
                 Main.out.flush();
                 Main.out.write(partCategorySearchField.getText() + '\n');
+                Main.out.flush();
+                Main.out.write(partPriceMinSearchField.getText() + '\n');
                 Main.out.flush();
                 Main.out.write(partPriceSearchField.getText() + '\n');
                 Main.out.flush();

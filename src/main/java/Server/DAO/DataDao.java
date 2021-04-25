@@ -28,4 +28,11 @@ public class DataDao {
         transaction.commit();
         session.close();
     }
+    public void updateData(SpareData data){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(data);
+        transaction.commit();
+        session.close();
+    }
 }

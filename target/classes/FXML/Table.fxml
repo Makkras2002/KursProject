@@ -38,17 +38,18 @@
          <font>
             <Font name="Italic_IV50" size="24.0" />
          </font></Label>
-      <TextField fx:id="partPriceSearchField" layoutX="1114.0" layoutY="262.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Цена" />
-      <TextField fx:id="partSirnameSearchField" layoutX="1114.0" layoutY="324.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Фамилия продавца" />
-      <TextField fx:id="partBuyerSearchField" layoutX="1114.0" layoutY="383.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Покупатель" />
-      <TextField fx:id="partDateSearchField" layoutX="1114.0" layoutY="442.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Дата сделки" />
+      <TextField fx:id="partPriceSearchField" layoutX="1114.0" layoutY="308.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Верхняя граница цены" />
+      <TextField fx:id="partSirnameSearchField" layoutX="1114.0" layoutY="364.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Фамилия продавца" />
+      <TextField fx:id="partBuyerSearchField" layoutX="1114.0" layoutY="418.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Покупатель" />
+      <TextField fx:id="partDateSearchField" layoutX="1114.0" layoutY="472.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Дата сделки" />
       <Button fx:id="refreshTableButton" layoutX="792.0" layoutY="638.0" mnemonicParsing="false" opacity="0.8" prefHeight="38.0" prefWidth="102.0" stylesheets="@ButtonSettings.css" text="Обновить" />
       <TextField fx:id="partIdSearchField" layoutX="1114.0" layoutY="100.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="ID запчасти" />
       <ChoiceBox fx:id="choiceBox" layoutX="1114.0" layoutY="560.0" prefHeight="26.0" prefWidth="182.0" />
-      <Label layoutX="1181.0" layoutY="518.0" text=" Оценка" textFill="#ffee00">
+      <Label layoutX="1173.0" layoutY="521.0" prefHeight="19.0" prefWidth="63.0" text=" Оценка" textFill="#ffee00">
          <font>
             <Font name="Italic_IV50" size="14.0" />
          </font>
       </Label>
+      <TextField fx:id="partPriceMinSearchField" layoutX="1113.0" layoutY="252.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Нижняя граница цены" />
    </children>
 </AnchorPane>

@@ -53,6 +53,69 @@ public class MainServer {
                             dataDao.savaData(spareData);
                             break;
                         }
+                        case "RedactTransaction":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String id = in.readLine();
+                            String nameOfPart = in.readLine();
+                            String category =in.readLine();
+                            String price =in.readLine();
+                            String sirname =in.readLine();
+                            String name =in.readLine();
+                            String buyer =in.readLine();
+                            String amount =in.readLine();
+                            String date =in.readLine();
+                            String mark =in.readLine();
+                            List<SpareData> allData = new ArrayList<>();
+                            SpareData dataToRedact =new SpareData();
+                            dataToRedact.setData_id(-1);
+                            DataDao dataDao = new DataDao();
+                            allData = dataDao.getAll();
+                            for(SpareData a :allData){
+                                if(a.getData_id() == Integer.parseInt(id)){
+                                    dataToRedact = a;
+                                    break;
+                                }
+                            }
+                            if(dataToRedact.getData_id() != -1){
+                                if(!nameOfPart.equals("")){
+                                    dataToRedact.getPart().setName(nameOfPart);
+                                }
+                                if(!category.equals("")){
+                                    dataToRedact.getPart().setCategory(category);
+                                }
+                                if(!price.equals("")){
+                                    dataToRedact.getPart().setPrice(price);
+                                }
+                                if(!sirname.equals("")){
+                                    dataToRedact.getSeller().setSirname(sirname);
+                                }
+                                if(!name.equals("")){
+                                    dataToRedact.getSeller().setName(name);
+                                }
+                                if(!buyer.equals("")){
+                                    dataToRedact.setBuyer(buyer);
+                                }
+                                if(!amount.equals("")){
+                                    dataToRedact.setAmount(amount);
+                                }
+                                if(!date.equals("..")){
+                                    System.out.println("rhrehreg");
+                                    dataToRedact.setDate(date);
+                                }
+                                if(!mark.equals("null")){
+                                    dataToRedact.setMark(mark);
+                                }
+                                dataDao.updateData(dataToRedact);
+                                out.write("Yes"  + "\n");
+                                out.flush();
+                            }
+                            else {
+                                out.write("No"  + "\n");
+                                out.flush();
+                            }
+                            break;
+                        }
                         case "deleteTransaction":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
@@ -79,11 +142,18 @@ public class MainServer {
                             String partId = in.readLine();
                             String nameOfPart = in.readLine();
                             String category =in.readLine();
+                            String priceMin =in.readLine();
                             String price =in.readLine();
                             String sirname =in.readLine();
                             String buyer =in.readLine();
                             String date =in.readLine();
                             String mark =in.readLine();
+                            if(price.equals("")){
+                                price ="0";
+                            }
+                            if(priceMin.equals("")){
+                                priceMin = "0";
+                            }
                             DataDao baseInf = new DataDao();
                             List<SpareData> databaseInfoList;
                             databaseInfoList = baseInf.getAll();
@@ -92,10 +162,11 @@ public class MainServer {
                             for(SpareData b : databaseInfoList){
                                 if(((s = String.valueOf(b.getData_id())).equals(partId) ||partId.equals(""))&&((b.getPart().getName().contains(nameOfPart)&&nameOfPart.length()>1)||nameOfPart.equals(""))&&
                                         ((b.getPart().getCategory().contains(category)&&category.length()>1)||category.equals(""))&&
-                                        (b.getPart().getPrice().equals(price)||price.equals(""))&&
+                                        (Integer.parseInt(b.getPart().getPrice())<=Integer.parseInt(price)||price.equals("0"))&&
+                                        (Integer.parseInt(b.getPart().getPrice())>=Integer.parseInt(priceMin)||priceMin.equals("0"))&&
                                         ((b.getSeller().getSirname().contains(sirname)&&sirname.length()>1)||sirname.equals(""))&&
                                         ((b.getBuyer().contains(buyer)&&buyer.length()>1)||buyer.equals(""))&&
-                                        (b.getDate().equals(date)||date.equals(""))&&(b.getMark().equals(mark)||mark==null||mark.equals("-"))){
+                                        (b.getDate().equals(date)||date.equals(""))&&(b.getMark().equals(mark)||mark.equals("")||mark.equals("-"))){
                                     searchResultList.add(b);
                                 }
                             }

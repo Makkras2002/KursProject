@@ -33,6 +33,9 @@ public class MainMenuUser {
     private Button doMethod;
 
     @FXML
+    private Button redactInfo;
+
+    @FXML
     private Button exit;
 
 
@@ -42,6 +45,11 @@ public class MainMenuUser {
             setMenuingSignal(false);
             closeWindow(addInfo);
             buttonAction("/FXML/AddMech.fxml","Добавление данных о заключенной сделке",427, 620);
+        });
+        redactInfo.setOnAction((event) -> {
+            setMenuingSignal(false);
+            closeWindow(redactInfo);
+            buttonAction("/FXML/RedactMech.fxml","Изменение данных о заключенной сделке",581, 620);
         });
         delInfo.setOnAction((event) -> {
             setMenuingSignal(false);

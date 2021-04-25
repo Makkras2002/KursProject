@@ -55,10 +55,18 @@ public class MainMenuAdm {
     @FXML
     private Button viewUsers;
 
+    @FXML
+    private Button redactInfo;
+
     public static String userDataInGson;
 
     @FXML
     void initialize() {
+        redactInfo.setOnAction((event) -> {
+            setMenuingSignal(true);
+            closeWindow(redactInfo);
+            buttonAction("/FXML/RedactMech.fxml","Изменение данных о заключенной сделке",581, 620);
+        });
         addInfo.setOnAction((event) -> {
             setMenuingSignal(true);
             closeWindow(addInfo);
