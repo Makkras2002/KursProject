@@ -100,7 +100,6 @@ public class MainServer {
                                     dataToRedact.setAmount(amount);
                                 }
                                 if(!date.equals("..")){
-                                    System.out.println("rhrehreg");
                                     dataToRedact.setDate(date);
                                 }
                                 if(!mark.equals("null")){

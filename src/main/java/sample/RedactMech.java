@@ -75,49 +75,60 @@ public class RedactMech {
                 if(((price.getText()).matches("-?([1-9][0-9]*)?")||price.getText().equals(""))&&((amount.getText()).matches("-?([1-9][0-9]*)?")||amount.getText().equals(""))
                         &&((day.getText()).matches("-?([1-9][0-9]*)?")||day.getText().equals(""))&&((month.getText()).matches("-?([1-9][0-9]*)?")||month.getText().equals(""))
                         &&((year.getText()).matches("-?([1-9][0-9]*)?")||year.getText().equals(""))&&(IDMech.getText()).matches("-?([1-9][0-9]*)?")){
+                    boolean errSignal = true;
                     if(!price.getText().equals("")){
                         if(Integer.parseInt(price.getText())<1){
+                            errSignal = false;
                             errorCase();
                         }
                     }
                     if(!day.getText().equals("")){
                         if(Integer.parseInt(day.getText())<1 ||Integer.parseInt(day.getText())>31){
+                            errSignal = false;
                             errorCase();
                         }
                     }
                     if(!month.getText().equals("")){
                         if(Integer.parseInt(month.getText())<1 ||Integer.parseInt(month.getText())>12){
+                            errSignal = false;
                             errorCase();
                         }
                     }
                     if(!year.getText().equals("")){
                         if(Integer.parseInt(year.getText())<1970){
+                            errSignal = false;
                             errorCase();
                         }
                     }
                     if(Integer.parseInt(IDMech.getText())<1){
+                        errSignal = false;
                         errorCase();
                     }
-                    if(isMenuingSignal()){
-                        String finalRes = servMessagePattern();
-                        if(finalRes.equals("No")){
-                            errorCase();
+
+
+                    if(errSignal){
+                        if(isMenuingSignal()){
+                            String finalRes = servMessagePattern();
+                            if(finalRes.equals("No")){
+                                errorCase();
+                            }
+                            else {
+                                closeWindow(addButton);
+                                buttonAction("/FXML/MainMenuAdm.fxml","ООО \"Грузовые детали0\"",600,644);
+                            }
                         }
-                        else {
-                            closeWindow(addButton);
-                            buttonAction("/FXML/MainMenuAdm.fxml","ООО \"Грузовые детали0\"",600,644);
+                        if(isMenuingSignal()==false){
+                            String finalRes =servMessagePattern();
+                            if(finalRes.equals("No")){
+                                errorCase();
+                            }
+                            else {
+                                closeWindow(addButton);
+                                buttonAction("/FXML/MainMenuUser.fxml","ООО \"Грузовые детали0\"",600,644);
+                            }
                         }
                     }
-                    if(isMenuingSignal()==false){
-                        String finalRes =servMessagePattern();
-                        if(finalRes.equals("No")){
-                            errorCase();
-                        }
-                        else {
-                            closeWindow(addButton);
-                            buttonAction("/FXML/MainMenuUser.fxml","ООО \"Грузовые детали0\"",600,644);
-                        }
-                    }
+
 
                 }
                 if(!(((price.getText()).matches("-?([1-9][0-9]*)?")||price.getText().equals(""))&&((amount.getText()).matches("-?([1-9][0-9]*)?")||amount.getText().equals(""))
