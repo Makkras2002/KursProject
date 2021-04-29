@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1337.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Table">
    <children>
-      <Label layoutX="254.0" layoutY="14.0" text="Данные в табличном виде" textFill="#ffd800">
+      <Label layoutX="372.0" layoutY="21.0" text="Данные в табличном виде" textFill="#ffd800">
          <font>
             <Font name="Italic_IV50" size="26.0" />
          </font>
@@ -51,5 +51,7 @@
          </font>
       </Label>
       <TextField fx:id="partPriceMinSearchField" layoutX="1113.0" layoutY="252.0" opacity="0.8" prefHeight="26.0" prefWidth="182.0" promptText="Нижняя граница цены" />
+      <Button fx:id="sortButton" layoutX="33.0" layoutY="53.0" mnemonicParsing="false" opacity="0.8" prefHeight="26.0" prefWidth="150.0" stylesheets="@ButtonSettings.css" text="Выполнить сортировку" />
+      <ChoiceBox fx:id="sortChoiceBox" layoutX="32.0" layoutY="14.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

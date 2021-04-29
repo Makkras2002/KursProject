@@ -175,6 +175,20 @@ public class MainServer {
                             out.flush();
                             break;
                         }
+                        case "sortView":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            String param = in.readLine();
+                            DataDao baseInf = new DataDao();
+                            List<SpareData> databaseInfoList = new ArrayList<>();
+                            databaseInfoList = baseInf.getAll();
+                            sortDataArray(databaseInfoList,param);
+                            Gson gson = new Gson();
+                            String gsonFormatData = gson.toJson(databaseInfoList);
+                            out.write( gsonFormatData + "\n");
+                            out.flush();
+                            break;
+                        }
                         case "tableView":{
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
@@ -303,5 +317,44 @@ public class MainServer {
         } catch (IOException e) {
             System.err.println(e);
         }
+    }
+    private static List<SpareData> sortDataArray(List<SpareData> data,String param){
+        int i=0;
+        boolean sign = true;
+        SpareData temp1  = new SpareData();
+        SpareData temp2 = new SpareData();
+        while (sign){
+            i = 0;
+            sign = false;
+            while (i<data.size()-1){
+                if(param.equals("по ID")){
+                    if(data.get(i).getData_id() >data.get(i+1).getData_id()){
+                        temp1 = data.get(i);
+                        temp2 = data.get(i+1);
+                        data.set(i,temp2);
+                        data.set(i+1,temp1);
+                        sign = true;
+                    }
+                }else if (param.equals("по цене")){
+                    if(Integer.parseInt(data.get(i).getPart().getPrice()) >Integer.parseInt(data.get(i+1).getPart().getPrice())){
+                        temp1 = data.get(i);
+                        temp2 = data.get(i+1);
+                        data.set(i,temp2);
+                        data.set(i+1,temp1);
+                        sign = true;
+                    }
+                }else if (param.equals("по количеству")){
+                    if(Integer.parseInt(data.get(i).getAmount()) >Integer.parseInt(data.get(i+1).getAmount())){
+                        temp1 = data.get(i);
+                        temp2 = data.get(i+1);
+                        data.set(i,temp2);
+                        data.set(i+1,temp1);
+                        sign = true;
+                    }
+                }
+                i++;
+            }
+        }
+        return data;
     }
 }

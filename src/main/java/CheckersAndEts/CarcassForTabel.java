@@ -107,4 +107,20 @@ public class CarcassForTabel {
     }
     public CarcassForTabel(){
     }
+
+    @Override
+    public String toString() {
+        return "CarcassForTabel{" +
+                "id=" + id +
+                ", nameOfPart='" + nameOfPart + '\'' +
+                ", category='" + category + '\'' +
+                ", price='" + price + '\'' +
+                ", sellerSirname='" + sellerSirname + '\'' +
+                ", amount='" + amount + '\'' +
+                ", sellerName='" + sellerName + '\'' +
+                ", buyer='" + buyer + '\'' +
+                ", date='" + date + '\'' +
+                ", mark='" + mark + '\'' +
+                '}';
+    }
 }

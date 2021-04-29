@@ -3,9 +3,7 @@ package sample;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URL;
-import java.util.HashSet;
-import java.util.ResourceBundle;
-import java.util.Set;
+import java.util.*;
 
 import CheckersAndEts.CarcassForTabel;
 import Server.SpareData;
@@ -99,12 +97,21 @@ public class Table {
     @FXML
     private ChoiceBox<String> choiceBox;
 
+    @FXML
+    private Button sortButton;
+
+    @FXML
+    private ChoiceBox<String> sortChoiceBox;
+
 
     @FXML
     void initialize() {
         ObservableList<String> choiceB = FXCollections.observableArrayList("-","1","2","3","4","5","6","7","8","9","10");
+        ObservableList<String> sortChoice = FXCollections.observableArrayList("по ID","по цене","по количеству");
         choiceBox.setItems(choiceB);
         choiceBox.setValue("-");
+        sortChoiceBox.setItems(sortChoice);
+        sortChoiceBox.setValue("по ID");
         Gson gson=new Gson();
         Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
         Set<SpareData> trData = gson.fromJson(transactionsDataInGson,trDataInGsonType);
@@ -127,6 +134,32 @@ public class Table {
         for(CarcassForTabel a: viewSet){
             table.getItems().add(a);
         }
+        sortButton.setOnAction((event)->{
+            String word = "sortView";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+                String serverWord = Main.in.readLine();
+                System.out.println(serverWord);
+                Main.out.write(sortChoiceBox.getValue() + '\n');
+                Main.out.flush();
+                String sortedData =Main.in.readLine();
+                Set<SpareData> sortedDataSet = gson.fromJson(sortedData,trDataInGsonType);
+                clearTable();
+                List<CarcassForTabel> sortedList = new ArrayList<>();
+                for(SpareData a: sortedDataSet){
+                    sortedList.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
+                            a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
+                            a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
+
+                }
+                for(CarcassForTabel a: sortedList){
+                    table.getItems().add(a);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         refreshTableButton.setOnAction((event)->{
             String word = "tableView";
             try {
