@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
-import static CheckersAndEts.CheckerOfString.compareLines;
+
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
 import static sample.BaseButton.buttonAction;
 import static sample.BaseButton.closeWindow;
