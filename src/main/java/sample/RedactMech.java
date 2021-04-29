@@ -68,7 +68,7 @@ public class RedactMech {
         ObservableList<String> choiceB = FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10");
         choiceBox.setItems(choiceB);
         addButton.setOnAction((event) -> {
-            if(IDMech.getText().equals("")){
+            if(IDMech.getText().equals("") || IDMech.getText().length() > 5){
                 errorCase();
             }
             else{
@@ -83,19 +83,22 @@ public class RedactMech {
                         }
                     }
                     if(!day.getText().equals("")){
-                        if(Integer.parseInt(day.getText())<1 ||Integer.parseInt(day.getText())>31){
+                        if(Integer.parseInt(day.getText())<1 ||Integer.parseInt(day.getText())>31
+                                || month.getText().equals("") || year.getText().equals("")){
                             errSignal = false;
                             errorCase();
                         }
                     }
                     if(!month.getText().equals("")){
-                        if(Integer.parseInt(month.getText())<1 ||Integer.parseInt(month.getText())>12){
+                        if(Integer.parseInt(month.getText())<1 ||Integer.parseInt(month.getText())>12
+                                ||day.getText().equals("") || year.getText().equals("")){
                             errSignal = false;
                             errorCase();
                         }
                     }
                     if(!year.getText().equals("")){
-                        if(Integer.parseInt(year.getText())<1970){
+                        if(Integer.parseInt(year.getText())<1970
+                                ||day.getText().equals("") ||month.getText().equals("")){
                             errSignal = false;
                             errorCase();
                         }
@@ -104,8 +107,6 @@ public class RedactMech {
                         errSignal = false;
                         errorCase();
                     }
-
-
                     if(errSignal){
                         if(isMenuingSignal()){
                             String finalRes = servMessagePattern();
