@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 
 import static CheckersAndEts.CheckerAdmOrUs.setAddingSignalSignal;
 import static CheckersAndEts.CheckerAdmOrUs.setMenuingSignal;
+import static CheckersAndEts.TransactionsDataInJson.methodMark;
 import static sample.BaseButton.buttonAction;
 import static sample.BaseButton.closeWindow;
 import static CheckersAndEts.TransactionsDataInJson.transactionsDataInGson;
@@ -115,7 +116,17 @@ public class MainMenuAdm {
         doMethod.setOnAction((event) -> {
             setMenuingSignal(true);
             closeWindow(doMethod);
-            buttonAction("/FXML/Method.fxml","Метод",525, 336);
+            String word = "doMethod";
+            try {
+                Main.out.write(word +'\n');
+                Main.out.flush();
+                String serverWord = Main.in.readLine();
+                System.out.println(serverWord);
+                methodMark = Main.in.readLine();
+                buttonAction("/FXML/Method.fxml","Метод",729, 336);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         exit.setOnAction((event) -> {
             String word = "exit";

@@ -8,6 +8,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.lang.String;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -198,6 +199,24 @@ public class MainServer {
                             Gson gson = new Gson();
                             String gsonFormatData = gson.toJson(databaseInfoList);
                             out.write( gsonFormatData + "\n");
+                            out.flush();
+                            break;
+                        }
+                        case "doMethod":{
+                            out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
+                            out.flush();
+                            DataDao baseInf = new DataDao();
+                            List<SpareData> databaseInfoList = new ArrayList<>();
+                            databaseInfoList = baseInf.getAll();
+                            float tempCounter =0f;
+                            float Sum = 0f;
+                            for (SpareData a : databaseInfoList){
+                                Sum+=Float.parseFloat(a.getMark());
+                                tempCounter++;
+                            }
+//                            String result = String.format("%.2f",Sum/tempCounter);
+                            String result = String.valueOf(Sum/tempCounter);
+                            out.write(result  + "\n");
                             out.flush();
                             break;
                         }
