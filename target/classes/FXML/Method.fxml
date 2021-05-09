@@ -13,7 +13,7 @@
             <Font name="Italic_IV50" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="button" layoutX="212.0" layoutY="265.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="99.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+      <Button fx:id="button" layoutX="267.0" layoutY="268.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
       <Label layoutX="151.0" layoutY="36.0" prefHeight="24.0" prefWidth="427.0" text=" магазина на основе экспертных оценок" textFill="#ffee00">
          <font>
             <Font name="Italic_IV50" size="18.0" />
