@@ -1,6 +1,10 @@
 package sample;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -31,11 +35,33 @@ public class Method {
     @FXML
     void initialize() {
         mMark.setText(methodMark);
+        boolean signal = true;
         if(Float.parseFloat(methodMark) >= 7.0f){
-            conclusion.setText("Средняя эффективность работы предприятия оценена как высокая. Дополнительные меры не требуются.");
+            conclusion.setText("Средняя эффективность работы предприятия оценена как высокая. " +
+                    "Дополнительные меры не требуются.");
+            signal = true;
         }
         else {
-            conclusion.setText("Эффективность работы предприятия не удовлетвлетворительна. Требуются дополнительные меры для оптимизации работы предприятия.");
+            conclusion.setText("Эффективность работы предприятия не удовлетвлетворительна. " +
+                    "Требуются дополнительные меры для оптимизации работы предприятия.");
+            signal = false;
+        }
+        try {
+            FileWriter report = new FileWriter("C:/foulder1.1/report.txt");
+            Date dateNow = new Date();
+            SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd.MM.yyyy");
+            report.write("Дата выдачи отчёта: "+ formatForDateNow.format(dateNow)+"\nУровень удовлетворённости " +
+                    "клиентов работой оптового магазина - "+ methodMark+".\n");
+            if(signal){
+                report.write("Вывод: Магазин эффективно и качественно работает с покупателями и проводит сделки.\n" +
+                        "Оптимизация не требуется.");
+            }else {
+                report.write("Вывод: Магазин не достаточно эффективно  работает с покупателями и проводит сделки.\n" +
+                        "Требуется оптимизация для увеличения уровня эффективности работы магазина.");
+            }
+            report.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         button.setOnAction((event) -> {
             closeWindow(button);
