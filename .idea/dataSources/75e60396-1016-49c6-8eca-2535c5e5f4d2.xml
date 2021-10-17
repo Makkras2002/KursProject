@@ -45,14 +45,14 @@ false Africa/Blantyre
 false Africa/Brazzaville
 false Africa/Bujumbura
 false Africa/Cairo
-true Africa/Casablanca
+false Africa/Casablanca
 true Africa/Ceuta
 false Africa/Conakry
 false Africa/Dakar
 false Africa/Dar_es_Salaam
 false Africa/Djibouti
 false Africa/Douala
-true Africa/El_Aaiun
+false Africa/El_Aaiun
 false Africa/Freetown
 false Africa/Gaborone
 false Africa/Harare
@@ -104,7 +104,7 @@ false America/Argentina/San_Luis
 false America/Argentina/Tucuman
 false America/Argentina/Ushuaia
 false America/Aruba
-false America/Asuncion
+true America/Asuncion
 false America/Atikokan
 true America/Atka
 false America/Bahia
@@ -227,7 +227,7 @@ false America/Rio_Branco
 false America/Rosario
 true America/Santa_Isabel
 false America/Santarem
-false America/Santiago
+true America/Santiago
 false America/Santo_Domingo
 false America/Sao_Paulo
 true America/Scoresbysund
@@ -255,12 +255,12 @@ true America/Yellowknife
 false Antarctica/Casey
 false Antarctica/Davis
 false Antarctica/DumontDUrville
-false Antarctica/Macquarie
+true Antarctica/Macquarie
 false Antarctica/Mawson
-false Antarctica/McMurdo
+true Antarctica/McMurdo
 false Antarctica/Palmer
 false Antarctica/Rothera
-false Antarctica/South_Pole
+true Antarctica/South_Pole
 false Antarctica/Syowa
 true Antarctica/Troll
 false Antarctica/Vostok
@@ -347,7 +347,7 @@ false Asia/Srednekolymsk
 false Asia/Taipei
 false Asia/Tashkent
 false Asia/Tbilisi
-true Asia/Tehran
+false Asia/Tehran
 true Asia/Tel_Aviv
 false Asia/Thimbu
 false Asia/Thimphu
@@ -376,29 +376,29 @@ false Atlantic/Reykjavik
 false Atlantic/South_Georgia
 false Atlantic/St_Helena
 false Atlantic/Stanley
-false Australia/ACT
-false Australia/Adelaide
+true Australia/ACT
+true Australia/Adelaide
 false Australia/Brisbane
-false Australia/Broken_Hill
-false Australia/Canberra
-false Australia/Currie
+true Australia/Broken_Hill
+true Australia/Canberra
+true Australia/Currie
 false Australia/Darwin
 false Australia/Eucla
-false Australia/Hobart
-false Australia/LHI
+true Australia/Hobart
+true Australia/LHI
 false Australia/Lindeman
-false Australia/Lord_Howe
-false Australia/Melbourne
-false Australia/NSW
+true Australia/Lord_Howe
+true Australia/Melbourne
+true Australia/NSW
 false Australia/North
 false Australia/Perth
 false Australia/Queensland
-false Australia/South
-false Australia/Sydney
-false Australia/Tasmania
-false Australia/Victoria
+true Australia/South
+true Australia/Sydney
+true Australia/Tasmania
+true Australia/Victoria
 false Australia/West
-false Australia/Yancowinna
+true Australia/Yancowinna
 true BDST
 false BDT
 false BNT
@@ -425,7 +425,7 @@ false CHAST
 false CHUT
 false CKT
 true CLST
-false CLT
+true CLT
 false COT
 false CST
 true CST6CDT
@@ -438,13 +438,13 @@ true Canada/Newfoundland
 true Canada/Pacific
 false Canada/Saskatchewan
 false Canada/Yukon
-false Chile/Continental
-false Chile/EasterIsland
+true Chile/Continental
+true Chile/EasterIsland
 true Cuba
 false DAVT
 false DDUT
-false EASST
-false EAST
+true EASST
+true EAST
 false EAT
 true EDT
 true EEST
@@ -598,7 +598,7 @@ false Indian/Maldives
 false Indian/Mauritius
 false Indian/Mayotte
 false Indian/Reunion
-true Iran
+false Iran
 true Israel
 false JAYT
 false JST
@@ -612,7 +612,7 @@ false KRAST
 false KRAT
 false KST
 false Kwajalein
-false LHDT
+true LHDT
 false LHST
 false LIGT
 false LINT
@@ -649,8 +649,8 @@ false NOVT
 false NPT
 false NST
 false NUT
-false NZ
-false NZ-CHAT
+true NZ
+true NZ-CHAT
 true NZDT
 false NZST
 false NZT
@@ -674,13 +674,13 @@ false PST
 true PST8PDT
 false PWT
 true PYST
-false PYT
-false Pacific/Apia
-false Pacific/Auckland
+true PYT
+true Pacific/Apia
+true Pacific/Auckland
 false Pacific/Bougainville
-false Pacific/Chatham
+true Pacific/Chatham
 false Pacific/Chuuk
-false Pacific/Easter
+true Pacific/Easter
 false Pacific/Efate
 false Pacific/Enderbury
 false Pacific/Fakaofo
@@ -700,7 +700,7 @@ false Pacific/Marquesas
 false Pacific/Midway
 false Pacific/Nauru
 false Pacific/Niue
-false Pacific/Norfolk
+true Pacific/Norfolk
 false Pacific/Noumea
 false Pacific/Pago_Pago
 false Pacific/Palau
@@ -784,44 +784,48 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1618862014</StartupTime>
+      <StartupTime>1634330129</StartupTime>
     </root>
-    <database id="2" parent="1" name="TransactionsDataBase">
+    <database id="2" parent="1" name="Psp8LabDb">
+      <ObjectId>16538</ObjectId>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="3" parent="1" name="TransactionsDataBase">
       <ObjectId>16394</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>604</IntrospectionStateNumber>
+      <IntrospectionStateNumber>793</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
-    <database id="3" parent="1" name="postgres">
+    <database id="4" parent="1" name="postgres">
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
     </database>
-    <role id="4" parent="1" name="pg_execute_server_program">
+    <role id="5" parent="1" name="pg_execute_server_program">
       <ObjectId>4571</ObjectId>
     </role>
-    <role id="5" parent="1" name="pg_monitor">
+    <role id="6" parent="1" name="pg_monitor">
       <ObjectId>3373</ObjectId>
     </role>
-    <role id="6" parent="1" name="pg_read_all_settings">
+    <role id="7" parent="1" name="pg_read_all_settings">
       <ObjectId>3374</ObjectId>
     </role>
-    <role id="7" parent="1" name="pg_read_all_stats">
+    <role id="8" parent="1" name="pg_read_all_stats">
       <ObjectId>3375</ObjectId>
     </role>
-    <role id="8" parent="1" name="pg_read_server_files">
+    <role id="9" parent="1" name="pg_read_server_files">
       <ObjectId>4569</ObjectId>
     </role>
-    <role id="9" parent="1" name="pg_signal_backend">
+    <role id="10" parent="1" name="pg_signal_backend">
       <ObjectId>4200</ObjectId>
     </role>
-    <role id="10" parent="1" name="pg_stat_scan_tables">
+    <role id="11" parent="1" name="pg_stat_scan_tables">
       <ObjectId>3377</ObjectId>
     </role>
-    <role id="11" parent="1" name="pg_write_server_files">
+    <role id="12" parent="1" name="pg_write_server_files">
       <ObjectId>4570</ObjectId>
     </role>
-    <role id="12" parent="1" name="postgres">
+    <role id="13" parent="1" name="postgres">
       <ObjectId>10</ObjectId>
       <SuperRole>1</SuperRole>
       <CreateDb>1</CreateDb>
@@ -830,17 +834,17 @@ false Zulu
       <Replication>1</Replication>
       <BypassRls>1</BypassRls>
     </role>
-    <tablespace id="13" parent="1" name="pg_default">
+    <tablespace id="14" parent="1" name="pg_default">
       <ObjectId>1663</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>1</StateNumber>
     </tablespace>
-    <tablespace id="14" parent="1" name="pg_global">
+    <tablespace id="15" parent="1" name="pg_global">
       <ObjectId>1664</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>1</StateNumber>
     </tablespace>
-    <schema id="15" parent="2" name="information_schema">
+    <schema id="16" parent="3" name="information_schema">
       <ObjectId>13158</ObjectId>
       <Acl>10=UC/10
 U/10
@@ -848,7 +852,7 @@ U/10
       <StateNumber>293</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="16" parent="2" name="pg_catalog">
+    <schema id="17" parent="3" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
       <Acl>10=UC/10
@@ -857,7 +861,7 @@ U/10
       <StateNumber>286</StateNumber>
       <Owner>postgres</Owner>
     </schema>
-    <schema id="17" parent="2" name="public">
+    <schema id="18" parent="3" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Acl>10=UC/10
@@ -865,10 +869,10 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>605</IntrospectionStateNumber>
+      <IntrospectionStateNumber>794</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
-    <extension id="18" parent="2" name="plpgsql">
+    <extension id="19" parent="3" name="plpgsql">
       <ObjectId>13428</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>439</StateNumber>
@@ -876,21 +880,21 @@ UC/10
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
-    <language id="19" parent="2" name="c">
+    <language id="20" parent="3" name="c">
       <ObjectId>13</ObjectId>
       <Comment>dynamically-loaded C functions</Comment>
       <StateNumber>1</StateNumber>
       <ValidatorName>fmgr_c_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <language id="20" parent="2" name="internal">
+    <language id="21" parent="3" name="internal">
       <ObjectId>12</ObjectId>
       <Comment>built-in functions</Comment>
       <StateNumber>1</StateNumber>
       <ValidatorName>fmgr_internal_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <language id="21" parent="2" name="plpgsql">
+    <language id="22" parent="3" name="plpgsql">
       <ObjectId>13432</ObjectId>
       <Comment>PL/pgSQL procedural language</Comment>
       <StateNumber>439</StateNumber>
@@ -902,7 +906,7 @@ UC/10
       <ValidatorName>plpgsql_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <language id="22" parent="2" name="sql">
+    <language id="23" parent="3" name="sql">
       <ObjectId>14</ObjectId>
       <Comment>SQL-language functions</Comment>
       <StateNumber>1</StateNumber>
@@ -910,14 +914,14 @@ UC/10
       <ValidatorName>fmgr_sql_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <access-method id="23" parent="2" name="heap">
+    <access-method id="24" parent="3" name="heap">
       <ObjectId>2</ObjectId>
       <Comment>heap table access method</Comment>
       <StateNumber>1</StateNumber>
       <Handler>pg_catalog.heap_tableam_handler</Handler>
       <HandlerId>3</HandlerId>
     </access-method>
-    <access-method id="24" parent="2" name="btree">
+    <access-method id="25" parent="3" name="btree">
       <ObjectId>403</ObjectId>
       <Comment>b-tree index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -925,7 +929,7 @@ UC/10
       <HandlerId>330</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="25" parent="2" name="hash">
+    <access-method id="26" parent="3" name="hash">
       <ObjectId>405</ObjectId>
       <Comment>hash index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -933,7 +937,7 @@ UC/10
       <HandlerId>331</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="26" parent="2" name="gist">
+    <access-method id="27" parent="3" name="gist">
       <ObjectId>783</ObjectId>
       <Comment>GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -941,7 +945,7 @@ UC/10
       <HandlerId>332</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="27" parent="2" name="gin">
+    <access-method id="28" parent="3" name="gin">
       <ObjectId>2742</ObjectId>
       <Comment>GIN index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -949,7 +953,7 @@ UC/10
       <HandlerId>333</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="28" parent="2" name="spgist">
+    <access-method id="29" parent="3" name="spgist">
       <ObjectId>4000</ObjectId>
       <Comment>SP-GiST index access method</Comment>
       <StateNumber>1</StateNumber>
@@ -957,7 +961,7 @@ UC/10
       <HandlerId>334</HandlerId>
       <Type>index</Type>
     </access-method>
-    <access-method id="29" parent="2" name="brin">
+    <access-method id="30" parent="3" name="brin">
       <ObjectId>3580</ObjectId>
       <Comment>block range index (BRIN) access method</Comment>
       <StateNumber>1</StateNumber>
@@ -965,77 +969,92 @@ UC/10
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <sequence id="30" parent="17" name="hibernate_sequence">
+    <sequence id="31" parent="18" name="hibernate_sequence">
       <ObjectId>16536</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>590</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
-    <table id="31" parent="17" name="data_table">
+    <table id="32" parent="18" name="data_table">
       <ObjectId>16511</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>603</StateNumber>
     </table>
-    <table id="32" parent="17" name="part_table">
+    <table id="33" parent="18" name="mark_table">
+      <ObjectId>16609</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>789</StateNumber>
+    </table>
+    <table id="34" parent="18" name="part_table">
       <ObjectId>16501</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>581</StateNumber>
     </table>
-    <table id="33" parent="17" name="seller_table">
+    <table id="35" parent="18" name="seller_table">
       <ObjectId>16506</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>581</StateNumber>
     </table>
-    <column id="34" parent="31" name="data_id">
+    <table id="36" parent="18" name="v2_buyer_table">
+      <ObjectId>16604</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>788</StateNumber>
+    </table>
+    <table id="37" parent="18" name="v2_data_table">
+      <ObjectId>16599</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>788</StateNumber>
+    </table>
+    <column id="38" parent="32" name="data_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>577</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="35" parent="31" name="part_id">
+    <column id="39" parent="32" name="part_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>577</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="36" parent="31" name="amount">
+    <column id="40" parent="32" name="amount">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>577</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="37" parent="31" name="seller_id">
+    <column id="41" parent="32" name="seller_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>577</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="38" parent="31" name="buyer">
+    <column id="42" parent="32" name="buyer">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>577</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="39" parent="31" name="date">
+    <column id="43" parent="32" name="date">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>577</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="31" name="mark">
+    <column id="44" parent="32" name="mark">
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>603</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="41" parent="31" name="data_table_pkey">
+    <index id="45" parent="32" name="data_table_pkey">
       <ObjectId>16514</ObjectId>
       <StateNumber>577</StateNumber>
       <ColNames>data_id</ColNames>
@@ -1045,14 +1064,14 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="42" parent="31" name="data_table_pkey">
+    <key id="46" parent="32" name="data_table_pkey">
       <ObjectId>16515</ObjectId>
       <StateNumber>577</StateNumber>
       <ColNames>data_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>data_table_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="43" parent="31" name="fk9m98m0vrxsweajri55g3vmnyh">
+    <foreign-key id="47" parent="32" name="fk9m98m0vrxsweajri55g3vmnyh">
       <ObjectId>16526</ObjectId>
       <StateNumber>588</StateNumber>
       <ColNames>part_id</ColNames>
@@ -1062,7 +1081,7 @@ UC/10
       <RefKeyName>part_table_pkey</RefKeyName>
       <RefColNames>part_id</RefColNames>
     </foreign-key>
-    <foreign-key id="44" parent="31" name="fk6s99j00e1melxmlktw5d4k9b5">
+    <foreign-key id="48" parent="32" name="fk6s99j00e1melxmlktw5d4k9b5">
       <ObjectId>16531</ObjectId>
       <StateNumber>589</StateNumber>
       <ColNames>seller_id</ColNames>
@@ -1072,35 +1091,66 @@ UC/10
       <RefKeyName>seller_table_pkey</RefKeyName>
       <RefColNames>seller_id</RefColNames>
     </foreign-key>
-    <column id="45" parent="32" name="part_id">
+    <column id="49" parent="33" name="mark_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>778</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="50" parent="33" name="mark">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>778</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="51" parent="33" name="mark_table_pkey">
+      <ObjectId>16612</ObjectId>
+      <StateNumber>778</StateNumber>
+      <ColNames>mark_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="52" parent="33" name="mark_table_pkey">
+      <ObjectId>16613</ObjectId>
+      <StateNumber>778</StateNumber>
+      <ColNames>mark_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>mark_table_pkey</UnderlyingIndexName>
+    </key>
+    <column id="53" parent="34" name="part_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>575</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="32" name="name">
+    <column id="54" parent="34" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>575</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="47" parent="32" name="category">
+    <column id="55" parent="34" name="category">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>575</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="48" parent="32" name="price">
+    <column id="56" parent="34" name="price">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>575</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="49" parent="32" name="part_table_pkey">
+    <index id="57" parent="34" name="part_table_pkey">
       <ObjectId>16504</ObjectId>
       <StateNumber>575</StateNumber>
       <ColNames>part_id</ColNames>
@@ -1110,35 +1160,35 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="50" parent="32" name="part_table_pkey">
+    <key id="58" parent="34" name="part_table_pkey">
       <ObjectId>16505</ObjectId>
       <StateNumber>575</StateNumber>
       <ColNames>part_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>part_table_pkey</UnderlyingIndexName>
     </key>
-    <column id="51" parent="33" name="seller_id">
+    <column id="59" parent="35" name="seller_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>576</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="52" parent="33" name="sirname">
+    <column id="60" parent="35" name="sirname">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>576</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="53" parent="33" name="name">
+    <column id="61" parent="35" name="name">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>576</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="54" parent="33" name="seller_table_pkey">
+    <index id="62" parent="35" name="seller_table_pkey">
       <ObjectId>16509</ObjectId>
       <StateNumber>576</StateNumber>
       <ColNames>seller_id</ColNames>
@@ -1148,12 +1198,149 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="55" parent="33" name="seller_table_pkey">
+    <key id="63" parent="35" name="seller_table_pkey">
       <ObjectId>16510</ObjectId>
       <StateNumber>576</StateNumber>
       <ColNames>seller_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>seller_table_pkey</UnderlyingIndexName>
     </key>
+    <column id="64" parent="36" name="buyer_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>759</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="65" parent="36" name="name">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>759</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="66" parent="36" name="buyer_table_pkey">
+      <ObjectId>16607</ObjectId>
+      <StateNumber>759</StateNumber>
+      <ColNames>buyer_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="67" parent="36" name="buyer_table_pkey">
+      <ObjectId>16608</ObjectId>
+      <StateNumber>759</StateNumber>
+      <ColNames>buyer_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>buyer_table_pkey</UnderlyingIndexName>
+    </key>
+    <column id="68" parent="37" name="data_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="69" parent="37" name="part_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="70" parent="37" name="amount">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="71" parent="37" name="seller_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="72" parent="37" name="buyer_id">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="73" parent="37" name="date">
+      <Position>6</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="74" parent="37" name="mark_id">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>758</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="75" parent="37" name="v2_data_table_pkey">
+      <ObjectId>16602</ObjectId>
+      <StateNumber>758</StateNumber>
+      <ColNames>data_id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="76" parent="37" name="v2_data_table_pkey">
+      <ObjectId>16603</ObjectId>
+      <StateNumber>758</StateNumber>
+      <ColNames>data_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>v2_data_table_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="77" parent="37" name="fksju8ebewn5o33smnbj67vdp1m">
+      <ObjectId>16624</ObjectId>
+      <StateNumber>790</StateNumber>
+      <ColNames>part_id</ColNames>
+      <RefTableId>16501</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>part_table</RefTableName>
+      <RefKeyName>part_table_pkey</RefKeyName>
+      <RefColNames>part_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="78" parent="37" name="fk7xvyxmjyrghhr4198ws6grmi2">
+      <ObjectId>16629</ObjectId>
+      <StateNumber>791</StateNumber>
+      <ColNames>seller_id</ColNames>
+      <RefTableId>16506</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>seller_table</RefTableName>
+      <RefKeyName>seller_table_pkey</RefKeyName>
+      <RefColNames>seller_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="79" parent="37" name="fkmayi3ki2dxj4hpymbg886gjk5">
+      <ObjectId>16614</ObjectId>
+      <StateNumber>788</StateNumber>
+      <ColNames>buyer_id</ColNames>
+      <RefTableId>16604</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>v2_buyer_table</RefTableName>
+      <RefKeyName>buyer_table_pkey</RefKeyName>
+      <RefColNames>buyer_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="80" parent="37" name="fk8x6864esphw9rip8o05b0f1jy">
+      <ObjectId>16619</ObjectId>
+      <StateNumber>789</StateNumber>
+      <ColNames>mark_id</ColNames>
+      <RefTableId>16609</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>mark_table</RefTableName>
+      <RefKeyName>mark_table_pkey</RefKeyName>
+      <RefColNames>mark_id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

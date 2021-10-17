@@ -31,7 +31,7 @@
       <TextField fx:id="month" layoutX="38.0" layoutY="511.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите месяц" />
       <TextField fx:id="year" layoutX="38.0" layoutY="546.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите год" />
       <ChoiceBox fx:id="choiceBox" layoutX="38.0" layoutY="410.0" prefWidth="150.0" />
-      <Label layoutX="38.0" layoutY="383.0" text="Экспертная оценка" textFill="#ffe200">
+      <Label layoutX="38.0" layoutY="383.0" text="Оценка работы" textFill="#ffe200">
          <font>
             <Font size="14.0" />
          </font>

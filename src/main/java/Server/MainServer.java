@@ -3,15 +3,11 @@ package Server;
 import Server.DAO.DataDao;
 import com.google.gson.Gson;
 
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.lang.String;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class MainServer {
@@ -49,7 +45,7 @@ public class MainServer {
                             String date =in.readLine();
                             String mark =in.readLine();
                             SpareData spareData = new SpareData(new SparePart(nameOfPart,category,price),amount,
-                                    new Seller(sirname,name),buyer,date,mark);
+                                    new Seller(sirname,name),new Buyer(buyer),date,new Mark(mark));
                             DataDao dataDao = new DataDao();
                             dataDao.savaData(spareData);
                             break;
@@ -95,7 +91,7 @@ public class MainServer {
                                     dataToRedact.getSeller().setName(name);
                                 }
                                 if(!buyer.equals("")){
-                                    dataToRedact.setBuyer(buyer);
+                                    dataToRedact.getBuyer().setBuyer_name(buyer);
                                 }
                                 if(!amount.equals("")){
                                     dataToRedact.setAmount(amount);
@@ -104,7 +100,7 @@ public class MainServer {
                                     dataToRedact.setDate(date);
                                 }
                                 if(!mark.equals("null")){
-                                    dataToRedact.setMark(mark);
+                                    dataToRedact.getMark().setMark(mark);
                                 }
                                 dataDao.updateData(dataToRedact);
                                 out.write("Yes"  + "\n");
@@ -165,8 +161,8 @@ public class MainServer {
                                         (Integer.parseInt(b.getPart().getPrice())<=Integer.parseInt(price)||price.equals("0"))&&
                                         (Integer.parseInt(b.getPart().getPrice())>=Integer.parseInt(priceMin)||priceMin.equals("0"))&&
                                         ((b.getSeller().getSirname().contains(sirname)&&sirname.length()>1)||sirname.equals(""))&&
-                                        ((b.getBuyer().contains(buyer)&&buyer.length()>1)||buyer.equals(""))&&
-                                        (b.getDate().equals(date)||date.equals(""))&&(b.getMark().equals(mark)||mark.equals("")||mark.equals("-"))){
+                                        ((b.getBuyer().getBuyer_name().contains(buyer)&&buyer.length()>1)||buyer.equals(""))&&
+                                        (b.getDate().equals(date)||date.equals(""))&&(b.getMark().getMark().equals(mark)||mark.equals("")||mark.equals("-"))){
                                     searchResultList.add(b);
                                 }
                             }
@@ -211,7 +207,7 @@ public class MainServer {
                             float tempCounter =0f;
                             float Sum = 0f;
                             for (SpareData a : databaseInfoList){
-                                Sum+=Float.parseFloat(a.getMark());
+                                Sum+=Float.parseFloat(a.getMark().getMark());
                                 tempCounter++;
                             }
 //                            String result = String.format("%.2f",Sum/tempCounter);
@@ -226,7 +222,7 @@ public class MainServer {
                             String login = in.readLine();
                             String password =in.readLine();
                             AuthorizationBaseController a1 =new AuthorizationBaseController();
-                            a1.addAndSerialize(login,password,"AdminBase.dat");
+                            a1.addAndSerialize(login,password,"Files/AdminBase.dat");
                             break;
                         }
                         case "addUser":{
@@ -235,7 +231,7 @@ public class MainServer {
                             String login = in.readLine();
                             String password =in.readLine();
                             AuthorizationBaseController a1 =new AuthorizationBaseController();
-                            a1.addAndSerialize(login,password,"UserBase.dat");
+                            a1.addAndSerialize(login,password,"Files/UserBase.dat");
                             break;
                         }
                         case "checkAdminEnter":{
@@ -244,7 +240,7 @@ public class MainServer {
                             String login = in.readLine();
                             String password =in.readLine();
                             AuthorizationBaseController a1 = new AuthorizationBaseController();
-                            if(a1.check(login,password,"AdminBase.dat")){
+                            if(a1.check(login,password,"Files/AdminBase.dat")){
                                 out.write("Yes" +"\n");
                                 out.flush();
                             }
@@ -260,7 +256,7 @@ public class MainServer {
                             String login = in.readLine();
                             String password =in.readLine();
                             AuthorizationBaseController a1 = new AuthorizationBaseController();
-                            if(a1.check(login,password,"UserBase.dat")){
+                            if(a1.check(login,password,"Files/UserBase.dat")){
                                 out.write("Yes" +"\n");
                                 out.flush();
                             }
@@ -276,7 +272,7 @@ public class MainServer {
                             String login = in.readLine();
                             String password =in.readLine();
                             AuthorizationBaseController a1 = new AuthorizationBaseController();
-                            if(a1.deleteAdmin(login,password,"UserBase.dat")){
+                            if(a1.deleteAdmin(login,password,"Files/UserBase.dat")){
                                 out.write("Yes" +"\n");
                                 out.flush();
                             }
@@ -292,7 +288,7 @@ public class MainServer {
                             String login = in.readLine();
                             String password =in.readLine();
                             AuthorizationBaseController a1 = new AuthorizationBaseController();
-                            if(a1.deleteAdmin(login,password,"AdminBase.dat")){
+                            if(a1.deleteAdmin(login,password,"Files/AdminBase.dat")){
                                 out.write("Yes" +"\n");
                                 out.flush();
                             }
@@ -306,7 +302,7 @@ public class MainServer {
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
                             AuthorizationBaseController a1 = new AuthorizationBaseController();
-                            String gsonFormatData = a1.ConvertToJson("AdminBase.dat");
+                            String gsonFormatData = a1.ConvertToJson("Files/AdminBase.dat");
                             out.write( gsonFormatData + "\n");
                             out.flush();
                             break;
@@ -315,7 +311,7 @@ public class MainServer {
                             out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                             out.flush();
                             AuthorizationBaseController a1 = new AuthorizationBaseController();
-                            String gsonFormatData = a1.ConvertToJson("UserBase.dat");
+                            String gsonFormatData = a1.ConvertToJson("Files/UserBase.dat");
                             out.write( gsonFormatData + "\n");
                             out.flush();
                             break;

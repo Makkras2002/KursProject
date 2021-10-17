@@ -119,7 +119,7 @@ public class Table {
         for(SpareData a: trData){
             viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                     a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                    a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
+                    a.getSeller().getName(),a.getBuyer().getBuyer_name(),a.getDate(),a.getMark().getMark()));
         }
         idColomn.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,Integer>("id"));
         nameM.setCellValueFactory(new PropertyValueFactory<CarcassForTabel,String>("nameOfPart"));
@@ -150,7 +150,7 @@ public class Table {
                 for(SpareData a: sortedDataSet){
                     sortedList.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                             a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                            a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
+                            a.getSeller().getName(),a.getBuyer().getBuyer_name(),a.getDate(),a.getMark().getMark()));
 
                 }
                 for(CarcassForTabel a: sortedList){
@@ -175,7 +175,7 @@ public class Table {
                 for(SpareData a: trDataRefreshed){
                     viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                             a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                            a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
+                            a.getSeller().getName(),a.getBuyer().getBuyer_name(),a.getDate(),a.getMark().getMark()));
                 }
                 for(CarcassForTabel a: viewSet){
                     table.getItems().add(a);
@@ -217,7 +217,7 @@ public class Table {
                 for(SpareData a: trDataFound){
                     viewSet.add(new CarcassForTabel((int) (long)a.getData_id(),a.getPart().getName(),a.getPart().getCategory(),
                             a.getPart().getPrice(),a.getAmount(),a.getSeller().getSirname(),
-                            a.getSeller().getName(),a.getBuyer(),a.getDate(),a.getMark()));
+                            a.getSeller().getName(),a.getBuyer().getBuyer_name(),a.getDate(),a.getMark().getMark()));
                 }
                 for(CarcassForTabel a: viewSet){
                     table.getItems().add(a);

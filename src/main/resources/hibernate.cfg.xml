@@ -18,5 +18,7 @@
         <mapping class="Server.SpareData"/>
         <mapping class="Server.SparePart"/>
         <mapping class="Server.Seller"/>
+        <mapping class="Server.Buyer"/>
+        <mapping class="Server.Mark"/>
     </session-factory>
 </hibernate-configuration>
