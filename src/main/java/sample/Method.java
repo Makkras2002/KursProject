@@ -36,7 +36,7 @@ public class Method {
     void initialize() {
         mMark.setText(methodMark);
         boolean signal = true;
-        if(Float.parseFloat(methodMark) >= 7.0f){
+        if(Float. parseFloat(methodMark) >= 7.0f){
             conclusion.setText("Средняя эффективность работы предприятия оценена как высокая. " +
                     "Дополнительные меры не требуются.");
             signal = true;
