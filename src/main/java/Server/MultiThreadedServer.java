@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class MultithreadedServer{
+public class MultiThreadedServer {
     private static Socket clientSocket;
     private static ServerSocket server;
     public static void main(String[] args){
