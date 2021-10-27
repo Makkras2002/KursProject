@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
@@ -31,6 +32,9 @@ public class Method {
 
     @FXML
     private TextArea conclusion;
+
+    @FXML
+    private PieChart sphereDiag;
 
     @FXML
     void initialize() {

@@ -27,7 +27,7 @@
             <TableColumn fx:id="Name" prefWidth="99.19989013671875" text="Имя продавца" />
             <TableColumn fx:id="Buyer" minWidth="0.0" prefWidth="81.60009765625" text="Покупатель" />
             <TableColumn fx:id="Date" prefWidth="99.199951171875" text="Дата сделки" />
-            <TableColumn fx:id="mark" prefWidth="137.60003662109375" text="Экспертная оценка" />
+            <TableColumn fx:id="mark" prefWidth="137.60003662109375" text="Оценка сделки" />
         </columns>
       </TableView>
       <Button fx:id="tableButton" layoutX="362.0" layoutY="639.0" mnemonicParsing="false" opacity="0.8" prefHeight="38.0" prefWidth="358.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
