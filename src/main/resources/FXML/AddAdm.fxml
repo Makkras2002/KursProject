@@ -15,6 +15,6 @@
         </Label>
         <TextField fx:id="login" layoutX="38.0" layoutY="86.0" opacity="0.9" prefHeight="26.0" prefWidth="182.0" promptText="Введите логин" />
         <TextField fx:id="password" layoutX="38.0" layoutY="133.0" opacity="0.9" prefHeight="26.0" prefWidth="182.0" promptText="Введите пароль" />
-        <Button fx:id="addButton" layoutX="101.0" layoutY="204.0" mnemonicParsing="false" opacity="0.8" prefHeight="82.0" prefWidth="139.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
+        <Button fx:id="addButton" layoutX="101.0" layoutY="202.0" mnemonicParsing="false" opacity="0.8" prefHeight="82.0" prefWidth="139.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
     </children>
 </AnchorPane>

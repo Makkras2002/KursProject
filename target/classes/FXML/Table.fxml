@@ -16,7 +16,7 @@
             <Font name="Italic_IV50" size="26.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutX="43.0" layoutY="91.0" opacity="0.9" prefHeight="520.0" prefWidth="1056.0">
+      <TableView fx:id="table" layoutX="13.0" layoutY="104.0" opacity="0.9" prefHeight="520.0" prefWidth="1056.0">
         <columns>
             <TableColumn fx:id="idColomn" prefWidth="57.599971771240234" text="ID" />
           <TableColumn fx:id="nameM" prefWidth="153.5999755859375" text="Название запчасти" />

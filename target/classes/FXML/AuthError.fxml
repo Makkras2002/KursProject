@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="188.0" prefWidth="247.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@ErrorBackGroundSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AuthError">
    <children>
-      <Label layoutX="35.0" layoutY="26.0" text="Ошибка авторизации" textFill="RED">
+      <Label layoutX="35.0" layoutY="26.0" text="Ошибка авторизации" textFill="#ed0000">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>

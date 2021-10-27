@@ -123,7 +123,7 @@ public class MainMenuAdm {
                 String serverWord = Main.in.readLine();
                 System.out.println(serverWord);
                 methodMark = Main.in.readLine();
-                buttonAction("/FXML/Method.fxml","Метод",729, 336);
+                buttonAction("/FXML/Method.fxml","Метод",729, 687);
             } catch (IOException e) {
                 e.printStackTrace();
             }

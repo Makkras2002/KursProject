@@ -12,12 +12,12 @@
             <Font name="Arial Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="enterAsAdmin" layoutX="163.0" layoutY="193.0" mnemonicParsing="false" opacity="0.8" prefHeight="79.0" prefWidth="192.0" stylesheets="@ButtonSettings.css" text="Войти как администратор">
+      <Button fx:id="enterAsAdmin" layoutX="155.0" layoutY="193.0" mnemonicParsing="false" opacity="0.8" prefHeight="79.0" prefWidth="207.0" stylesheets="@ButtonSettings.css" text="Войти как администратор">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="enterAsUser" layoutX="163.0" layoutY="369.0" mnemonicParsing="false" opacity="0.8" prefHeight="79.0" prefWidth="192.0" stylesheets="@ButtonSettings.css" text="Войти как пользователь">
+      <Button fx:id="enterAsUser" layoutX="152.0" layoutY="369.0" mnemonicParsing="false" opacity="0.8" prefHeight="79.0" prefWidth="207.0" stylesheets="@ButtonSettings.css" text="Войти как пользователь">
          <font>
             <Font size="14.0" />
          </font>

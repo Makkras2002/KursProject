@@ -18,6 +18,6 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="authorizationAdmButton" layoutX="87.0" layoutY="243.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="130.0" stylesheets="@ButtonSettings.css" text="Авторизироваться" />
+      <Button fx:id="authorizationAdmButton" layoutX="72.0" layoutY="243.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="161.0" stylesheets="@ButtonSettings.css" text="Авторизироваться" />
    </children>
 </AnchorPane>
