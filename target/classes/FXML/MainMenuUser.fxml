@@ -15,7 +15,7 @@
         <Button fx:id="addInfo" layoutX="43.0" layoutY="127.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="222.0" stylesheets="@ButtonSettings.css" text="Добавить данные в систему" />
         <Button fx:id="delInfo" layoutX="43.0" layoutY="185.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="222.0" stylesheets="@ButtonSettings.css" text="Удалить данные из системы" />
         <Button fx:id="viewAll" layoutX="43.0" layoutY="249.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="222.0" stylesheets="@ButtonSettings.css" text="Просмотреть все данные" />
-        <Button fx:id="doMethod" layoutX="43.0" layoutY="307.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="222.0" stylesheets="@ButtonSettings.css" text="Рассчитать  удовлетворенность" />
+        <Button fx:id="doMethod" layoutX="43.0" layoutY="307.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="222.0" stylesheets="@ButtonSettings.css" text="Статистика" />
         <Button fx:id="exit" layoutX="203.0" layoutY="392.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
       <Button fx:id="redactInfo" layoutX="333.0" layoutY="127.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="257.0" stylesheets="@ButtonSettings.css" text="Изменить существующие данные" />
     </children>

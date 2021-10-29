@@ -198,6 +198,7 @@ public class ClientHandler implements Runnable {
                     case "doMethod":{
                         out.write("Привет, это Сервер! Подтверждаю, вы выбрали : " + word + "\n");
                         out.flush();
+                        Gson gson = new Gson();
                         DataDao baseInf = new DataDao();
                         List<SpareData> databaseInfoList = new ArrayList<>();
                         databaseInfoList = baseInf.getAll();
@@ -210,6 +211,9 @@ public class ClientHandler implements Runnable {
 //                            String result = String.format("%.2f",Sum/tempCounter);
                         String result = String.valueOf(Sum/tempCounter);
                         out.write(result  + "\n");
+                        out.flush();
+                        String gsonFormatData = gson.toJson(databaseInfoList);
+                        out.write( gsonFormatData + "\n");
                         out.flush();
                         break;
                     }

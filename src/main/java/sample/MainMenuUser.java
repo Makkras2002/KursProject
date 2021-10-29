@@ -82,7 +82,8 @@ public class MainMenuUser {
                 String serverWord = Main.in.readLine();
                 System.out.println(serverWord);
                 methodMark = Main.in.readLine();
-                buttonAction("/FXML/Method.fxml","Метод",729, 687);
+                transactionsDataInGson = Main.in.readLine();
+                buttonAction("/FXML/Method.fxml","Метод",729, 719);
             } catch (IOException e) {
                 e.printStackTrace();
             }
