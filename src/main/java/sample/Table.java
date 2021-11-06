@@ -89,7 +89,7 @@ public class Table {
     private TextField partBuyerSearchField;
 
     @FXML
-    private TextField partDateSearchField;
+    private DatePicker partDateSearchField;
 
     @FXML
     private Button refreshTableButton;
@@ -187,6 +187,17 @@ public class Table {
         searchButton.setOnAction((event) ->{
             String word = "searchView";
             try {
+                String[] resData = new String[3];
+                boolean isDataEmpty = true;
+                if(partDateSearchField.getEditor().getText().equals("")){
+                    resData[0] ="";
+                    resData[1] ="";
+                    resData[2] ="";
+
+                }else {
+                    resData =  partDateSearchField.getValue().toString().split("-");
+                    isDataEmpty =false;
+                }
                 Main.out.write(word + '\n');
                 Main.out.flush();
                 String serverWord = Main.in.readLine();
@@ -205,8 +216,13 @@ public class Table {
                 Main.out.flush();
                 Main.out.write(partBuyerSearchField.getText() + '\n');
                 Main.out.flush();
-                Main.out.write(partDateSearchField.getText() + '\n');
-                Main.out.flush();
+                if(isDataEmpty){
+                    Main.out.write("" + '\n');
+                    Main.out.flush();
+                }else {
+                    Main.out.write(resData[2] +"."+resData[1] +"."+resData[0]  + '\n');
+                    Main.out.flush();
+                }
                 Main.out.write(choiceBox.getValue() + '\n');
                 Main.out.flush();
                 String foundData;

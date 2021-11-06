@@ -2,10 +2,21 @@ package sample;
 
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
+
+import Server.SpareData;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import static CheckersAndEts.CheckerOfString.compareLines;
@@ -22,7 +33,7 @@ public class DelMech {
     private URL location;
 
     @FXML
-    private TextField name;
+    private ComboBox<String> name;
 
     @FXML
     private TextField idField;
@@ -33,8 +44,17 @@ public class DelMech {
 
     @FXML
     void initialize() {
+        Set<SpareData> dataSet = getInfo();
+        List<String> nameMechList = new ArrayList<>();
+        for(SpareData data : dataSet){
+            if(!nameMechList.contains(data.getPart().getName())){
+                nameMechList.add(data.getPart().getName());
+            }
+        }
+        ObservableList<String> nameMechObsList = FXCollections.observableArrayList(nameMechList);
+        name.setItems(nameMechObsList);
         addButton.setOnAction((event) -> {
-            if(compareLines(name.getText(),"") ||compareLines(idField.getText(),"")){
+            if(name.getValue()==null ||compareLines(idField.getText(),"")){
                 errorCase();
                 return;
             }
@@ -49,7 +69,7 @@ public class DelMech {
                         Main.out.flush();
                         String serverWord = Main.in.readLine();
                         System.out.println(serverWord);
-                        Main.out.write(name.getText() + '\n');
+                        Main.out.write(name.getValue() + '\n');
                         Main.out.flush();
                         Main.out.write(idField.getText() + '\n');
                         Main.out.flush();
@@ -71,9 +91,26 @@ public class DelMech {
             }
         });
     }
-    public void errorCase(){
+    private void errorCase(){
         closeWindow(addButton);
         buttonAction("/FXML/DataEnterErrorInTheRepeatings.fxml","Ошибка",470, 188);
+    }
+    private Set<SpareData> getInfo(){
+        Gson gson=new Gson();
+        Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
+        String word = "tableView";
+        Set<SpareData> trData = null;
+        try {
+            Main.out.write(word +'\n');
+            Main.out.flush();
+            String serverWord = Main.in.readLine();
+            System.out.println(serverWord);
+            String dataInGson = Main.in.readLine();
+            trData = gson.fromJson(dataInGson,trDataInGsonType);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return trData;
     }
 }
 

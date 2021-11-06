@@ -1,0 +1,20 @@
+
+f	java:S116"QRename this field "IDMech" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ˆóÄ
+n
+java:S3776C"SRefactor this method to reduce its Cognitive Complexity from 101 to the 15 allowed.(÷‹¾†ÿÿÿÿÿ
+I
+java:S1611F"3Remove the parentheses around the "event" parameter(òü©ß
+=
+java:S1125y"'Remove the unnecessary boolean literal.(þ¥¿ã
+O	java:S106›"9Replace this use of System.out or System.err by a logger.(—ŽÄã
+T	java:S106±"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ
+h
+java:S1192K"RDefine a constant instead of duplicating this literal "-?([1-9][0-9]*)?" 12 times.(‹·ËÕ
+D
+java:S1066P"/Merge this if statement with the enclosing one.(Ð¥¦=
+E
+java:S1066V"/Merge this if statement with the enclosing one.(ÿüÝí
+E
+java:S1066]"/Merge this if statement with the enclosing one.(ÎµÄ‚
+D
+java:S1066d"/Merge this if statement with the enclosing one.(ÇçÌk

@@ -1,0 +1,8 @@
+
+m
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(÷‹¾†ÿÿÿÿÿ
+I
+java:S1611$"3Remove the parentheses around the "event" parameter(òü©ß
+N	java:S1063"9Replace this use of System.out or System.err by a logger.(—ŽÄã
+=
+java:S1125<"'Remove the unnecessary boolean literal.(þ¥¿ã

@@ -1,0 +1,7 @@
+
+N
+java:S1611B"3Remove the parentheses around the "event" parameter(½ÚÜ˜ûÿÿÿÿ
+=
+java:S1125G"'Remove the unnecessary boolean literal.(þ¥¿ã
+^
+java:S20952"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(æã¢ú

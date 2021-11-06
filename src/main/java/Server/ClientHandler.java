@@ -72,22 +72,22 @@ public class ClientHandler implements Runnable {
                             }
                         }
                         if(dataToRedact.getData_id() != -1){
-                            if(!nameOfPart.equals("")){
+                            if(!nameOfPart.equals("null")){
                                 dataToRedact.getPart().setName(nameOfPart);
                             }
-                            if(!category.equals("")){
+                            if(!category.equals("null")){
                                 dataToRedact.getPart().setCategory(category);
                             }
                             if(!price.equals("")){
                                 dataToRedact.getPart().setPrice(price);
                             }
-                            if(!sirname.equals("")){
+                            if(!sirname.equals("null")){
                                 dataToRedact.getSeller().setSirname(sirname);
                             }
-                            if(!name.equals("")){
+                            if(!name.equals("null")){
                                 dataToRedact.getSeller().setName(name);
                             }
-                            if(!buyer.equals("")){
+                            if(!buyer.equals("null")){
                                 dataToRedact.getBuyer().setBuyer_name(buyer);
                             }
                             if(!amount.equals("")){

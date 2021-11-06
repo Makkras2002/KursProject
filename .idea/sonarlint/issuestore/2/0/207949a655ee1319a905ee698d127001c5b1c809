@@ -1,0 +1,10 @@
+
+m
+java:S3776@"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(÷‹¾†ÿÿÿÿÿ
+I
+java:S1611C"3Remove the parentheses around the "event" parameter(òü©ß
+=
+java:S1125["'Remove the unnecessary boolean literal.(þ¥¿ã
+N	java:S106w"9Replace this use of System.out or System.err by a logger.(—ŽÄã
+m
+java:S1192L"RDefine a constant instead of duplicating this literal "-?([1-9][0-9]*)?" 10 times.(š•áÔýÿÿÿÿ

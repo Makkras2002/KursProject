@@ -1,15 +1,20 @@
 package sample;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
+import Server.SpareData;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 
 import static CheckersAndEts.CheckerAdmOrUs.isMenuingSignal;
@@ -19,31 +24,7 @@ import static sample.BaseButton.closeWindow;
 public class RedactMech {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private TextField IDMech;
-
-    @FXML
-    private TextField nameMech;
-
-    @FXML
-    private TextField category;
-
-    @FXML
     private TextField price;
-
-    @FXML
-    private TextField sirname;
-
-    @FXML
-    private TextField name;
-
-    @FXML
-    private TextField buyer;
 
     @FXML
     private TextField amount;
@@ -52,19 +33,64 @@ public class RedactMech {
     private Button addButton;
 
     @FXML
-    private TextField day;
-
-    @FXML
-    private TextField month;
-
-    @FXML
-    private TextField year;
+    private DatePicker date;
 
     @FXML
     private ChoiceBox<String> choiceBox;
 
     @FXML
+    private TextField IDMech;
+
+    @FXML
+    private ComboBox<String> nameMech;
+
+    @FXML
+    private ComboBox<String> category;
+
+    @FXML
+    private ComboBox<String> sirname;
+
+    @FXML
+    private ComboBox<String> name;
+
+    @FXML
+    private ComboBox<String> buyer;
+
+    @FXML
     void initialize() {
+        Set<SpareData> dataSet = getInfo();
+        List<String> nameMechList = new ArrayList<>();
+        List<String> categoryList = new ArrayList<>();
+        List<String> sirnameList= new ArrayList<>();
+        List<String> nameList = new ArrayList<>();
+        List<String> buyerList = new ArrayList<>();
+        for(SpareData data : dataSet){
+            if(!nameMechList.contains(data.getPart().getName())){
+                nameMechList.add(data.getPart().getName());
+            }
+            if(!categoryList.contains(data.getPart().getCategory())){
+                categoryList.add(data.getPart().getCategory());
+            }
+            if(!sirnameList.contains(data.getSeller().getSirname())){
+                sirnameList.add(data.getSeller().getSirname());
+            }
+            if(!nameList.contains(data.getSeller().getName())){
+                nameList.add(data.getSeller().getName());
+            }
+            if(!buyerList.contains(data.getBuyer().getBuyer_name())){
+                buyerList.add(data.getBuyer().getBuyer_name());
+            }
+        }
+        ObservableList<String> nameMechObsList = FXCollections.observableArrayList(nameMechList);
+        ObservableList<String> categoryObsList = FXCollections.observableArrayList(categoryList);
+        ObservableList<String> sirnameObsList = FXCollections.observableArrayList(sirnameList);
+        ObservableList<String> nameObsList = FXCollections.observableArrayList(nameList);
+        ObservableList<String> buyerObsList = FXCollections.observableArrayList(buyerList);
+        nameMech.setItems(nameMechObsList);
+        category.setItems(categoryObsList);
+        sirname.setItems(sirnameObsList);
+        name.setItems(nameObsList);
+        buyer.setItems(buyerObsList);
         ObservableList<String> choiceB = FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10");
         choiceBox.setItems(choiceB);
         addButton.setOnAction((event) -> {
@@ -73,32 +99,10 @@ public class RedactMech {
             }
             else{
                 if(((price.getText()).matches("-?([1-9][0-9]*)?")||price.getText().equals(""))&&((amount.getText()).matches("-?([1-9][0-9]*)?")||amount.getText().equals(""))
-                        &&((day.getText()).matches("-?([1-9][0-9]*)?")||day.getText().equals(""))&&((month.getText()).matches("-?([1-9][0-9]*)?")||month.getText().equals(""))
-                        &&((year.getText()).matches("-?([1-9][0-9]*)?")||year.getText().equals(""))&&(IDMech.getText()).matches("-?([1-9][0-9]*)?")){
+                        &&(IDMech.getText()).matches("-?([1-9][0-9]*)?")){
                     boolean errSignal = true;
                     if(!price.getText().equals("")){
                         if(Integer.parseInt(price.getText())<1){
-                            errSignal = false;
-                            errorCase();
-                        }
-                    }
-                    if(!day.getText().equals("")){
-                        if(Integer.parseInt(day.getText())<1 ||Integer.parseInt(day.getText())>31
-                                || month.getText().equals("") || year.getText().equals("")){
-                            errSignal = false;
-                            errorCase();
-                        }
-                    }
-                    if(!month.getText().equals("")){
-                        if(Integer.parseInt(month.getText())<1 ||Integer.parseInt(month.getText())>12
-                                ||day.getText().equals("") || year.getText().equals("")){
-                            errSignal = false;
-                            errorCase();
-                        }
-                    }
-                    if(!year.getText().equals("")){
-                        if(Integer.parseInt(year.getText())<1970
-                                ||day.getText().equals("") ||month.getText().equals("")){
                             errSignal = false;
                             errorCase();
                         }
@@ -133,8 +137,7 @@ public class RedactMech {
 
                 }
                 if(!(((price.getText()).matches("-?([1-9][0-9]*)?")||price.getText().equals(""))&&((amount.getText()).matches("-?([1-9][0-9]*)?")||amount.getText().equals(""))
-                        &&((day.getText()).matches("-?([1-9][0-9]*)?")||day.getText().equals(""))&&((month.getText()).matches("-?([1-9][0-9]*)?")||month.getText().equals(""))
-                        &&((year.getText()).matches("-?([1-9][0-9]*)?")||year.getText().equals(""))&&(IDMech.getText()).matches("-?([1-9][0-9]*)?"))) {
+                        &&(IDMech.getText()).matches("-?([1-9][0-9]*)?"))) {
                     errorCase();
                 }
             }
@@ -149,27 +152,35 @@ public class RedactMech {
         String word = "RedactTransaction";
         String result = "No";
         try {
+            String[] resData = new String[3];
+            if(date.getValue() ==null){
+                resData[0] ="";
+                resData[1] ="";
+                resData[2] ="";
+            }else {
+                resData =  date.getValue().toString().split("-");
+            }
             Main.out.write(word +'\n');
             Main.out.flush();
             String serverWord = Main.in.readLine();
             System.out.println(serverWord);
             Main.out.write(IDMech.getText() +'\n');
             Main.out.flush();
-            Main.out.write(nameMech.getText() +'\n');
+            Main.out.write(nameMech.getValue() +'\n');
             Main.out.flush();
-            Main.out.write(category.getText() + '\n');
+            Main.out.write(category.getValue() + '\n');
             Main.out.flush();
             Main.out.write(price.getText() + '\n');
             Main.out.flush();
-            Main.out.write(sirname.getText() + '\n');
+            Main.out.write(sirname.getValue() + '\n');
             Main.out.flush();
-            Main.out.write(name.getText() + '\n');
+            Main.out.write(name.getValue() + '\n');
             Main.out.flush();
-            Main.out.write(buyer.getText() + '\n');
+            Main.out.write(buyer.getValue() + '\n');
             Main.out.flush();
             Main.out.write(amount.getText() + '\n');
             Main.out.flush();
-            Main.out.write(day.getText() +"."+month.getText() +"."+year.getText() + '\n');
+            Main.out.write(resData[2] +"."+resData[1] +"."+resData[0] + '\n');
             Main.out.flush();
             Main.out.write(choiceBox.getValue() +'\n');
             Main.out.flush();
@@ -179,5 +190,22 @@ public class RedactMech {
             e.printStackTrace();
         }
         return result;
+    }
+    private Set<SpareData> getInfo(){
+        Gson gson=new Gson();
+        Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
+        String word = "tableView";
+        Set<SpareData> trData = null;
+        try {
+            Main.out.write(word +'\n');
+            Main.out.flush();
+            String serverWord = Main.in.readLine();
+            System.out.println(serverWord);
+            String dataInGson = Main.in.readLine();
+            trData = gson.fromJson(dataInGson,trDataInGsonType);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return trData;
     }
 }

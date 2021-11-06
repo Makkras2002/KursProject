@@ -48,11 +48,9 @@ public class Buyer {
     public void setBuyer_id(Integer buyer_id) {
         this.buyer_id = buyer_id;
     }
-
     public String getBuyer_name() {
         return buyer_name;
     }
-
     public void setBuyer_name(String buyer_name) {
         this.buyer_name = buyer_name;
     }

@@ -1,0 +1,12 @@
+
+P
+java:S1118":Add a private constructor to hide the implicit public one.(˜Ù€ñ
+}
+java:S1104"bMake transactionsDataInGson a static final constant or non-public and provide accessors if needed.(Ë‚›ßþÿÿÿÿ
+l
+java:S1104"VMake methodMark a static final constant or non-public and provide accessors if needed.(­½±Ú
+W
+java:S1444"<Make this "public static transactionsDataInGson" field final(Ë‚›ßþÿÿÿÿ
+F
+java:S1444"0Make this "public static methodMark" field final(­½±Ú
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔáŸ¯

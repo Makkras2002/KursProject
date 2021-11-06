@@ -1,0 +1,41 @@
+
+N
+java:S1611B"3Remove the parentheses around the "event" parameter(æí¶Åüÿÿÿÿ
+I
+java:S1611G"3Remove the parentheses around the "event" parameter(ƒİëÃ
+I
+java:S1611L"3Remove the parentheses around the "event" parameter(˜Ô“Í
+N
+java:S1611Q"3Remove the parentheses around the "event" parameter(­®¦ªÿÿÿÿÿ
+I
+java:S1611V"3Remove the parentheses around the "event" parameter(¥Â¾£
+N
+java:S1611["3Remove the parentheses around the "event" parameter(¿®¼€ûÿÿÿÿ
+H
+java:S1611`"3Remove the parentheses around the "event" parameter(Ü–İZ
+I
+java:S1611e"3Remove the parentheses around the "event" parameter(¤º¸Ì
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(—Äã
+Q
+java:S2696n"6Make the enclosing method "static" or remove this set.(ÿãİ¦ıÿÿÿÿ
+N
+java:S1611t"3Remove the parentheses around the "event" parameter(±Îí¦øÿÿÿÿ
+N	java:S106|"9Replace this use of System.out or System.err by a logger.(—Äã
+K
+java:S2696}"6Make the enclosing method "static" or remove this set.(çí¸;
+O
+java:S1611ƒ"3Remove the parentheses around the "event" parameter(öÎ‰÷úÿÿÿÿ
+J
+java:S1611"3Remove the parentheses around the "event" parameter(Öˆ£û
+O	java:S106”"9Replace this use of System.out or System.err by a logger.(—Äã
+R
+java:S2696•"6Make the enclosing method "static" or remove this set.(Œã²İøÿÿÿÿ
+J
+java:S1611›"3Remove the parentheses around the "event" parameter(Ü‰æç
+O	java:S106¢"9Replace this use of System.out or System.err by a logger.(—Äã
+R
+java:S2696£"6Make the enclosing method "static" or remove this set.(Œã²İøÿÿÿÿ
+u
+java:S1104>"ZMake userDataInGson a static final constant or non-public and provide accessors if needed.(íÑ·¯øÿÿÿÿ
+O
+java:S1444>"4Make this "public static userDataInGson" field final(íÑ·¯øÿÿÿÿ

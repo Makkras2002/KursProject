@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,33 +16,31 @@
                 <Font name="System Italic" size="20.0" />
             </font>
         </Label>
-        <TextField fx:id="nameMech" layoutX="38.0" layoutY="142.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите название запчасти" />
-        <TextField fx:id="category" layoutX="38.0" layoutY="181.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите категорию запчастей" />
-        <TextField fx:id="price" layoutX="38.0" layoutY="217.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите общую стоимость запчастей " />
-        <TextField fx:id="sirname" layoutX="38.0" layoutY="290.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите Фамилию продавца" />
-        <TextField fx:id="name" layoutX="38.0" layoutY="329.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите имя продавца" />
-        <TextField fx:id="buyer" layoutX="38.0" layoutY="366.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите имя покупателя(название фирмы)" />
-        <TextField fx:id="amount" layoutX="38.0" layoutY="253.0" opacity="0.9" prefHeight="26.0" prefWidth="266.0" promptText="Введите кол-во купленных запчастей" />
+        <TextField fx:id="price" layoutX="38.0" layoutY="217.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите общую стоимость запчастей " />
+        <TextField fx:id="amount" layoutX="38.0" layoutY="253.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите кол-во купленных запчастей" />
         <Button fx:id="addButton" layoutX="408.0" layoutY="518.0" mnemonicParsing="false" opacity="0.8" prefHeight="82.0" prefWidth="139.0" stylesheets="@ButtonSettings.css" text="Подтвердить" />
-        <TextField fx:id="day" layoutX="38.0" layoutY="497.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите день" />
         <Label layoutX="38.0" layoutY="466.0" text="Дата заключения сделки" textFill="#fff300">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <TextField fx:id="month" layoutX="38.0" layoutY="532.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите месяц" />
-        <TextField fx:id="year" layoutX="38.0" layoutY="565.0" opacity="0.9" prefHeight="26.0" prefWidth="115.0" promptText="Введите год" />
-        <ChoiceBox fx:id="choiceBox" layoutX="42.0" layoutY="432.0" prefWidth="150.0" />
-        <Label layoutX="42.0" layoutY="401.0" text="Оценка работы" textFill="#ffe200">
+        <ChoiceBox fx:id="choiceBox" layoutX="38.0" layoutY="433.0" opacity="0.9" prefWidth="150.0" />
+        <Label layoutX="38.0" layoutY="402.0" text="Оценка работы" textFill="#ffe200">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-      <TextField fx:id="IDMech" layoutX="38.0" layoutY="84.0" opacity="0.9" prefHeight="38.0" prefWidth="266.0" promptText="Введите  ID сделки" />
+      <TextField fx:id="IDMech" layoutX="38.0" layoutY="84.0" opacity="0.9" prefHeight="38.0" prefWidth="286.0" promptText="Введите  ID сделки" />
       <Label layoutX="26.0" layoutY="46.0" prefHeight="38.0" prefWidth="552.0" text="Введите ID сделки. Затем заполните поля, которые хотите изменить новыми данными" textFill="#fffb00">
          <font>
             <Font name="System Italic" size="13.0" />
          </font>
       </Label>
+      <ComboBox fx:id="nameMech" editable="true" layoutX="38.0" layoutY="140.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите название запчасти" />
+      <ComboBox fx:id="category" editable="true" layoutX="38.0" layoutY="180.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите категорию запчастей" />
+      <ComboBox fx:id="sirname" editable="true" layoutX="38.0" layoutY="289.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите Фамилию продавца" />
+      <ComboBox fx:id="name" editable="true" layoutX="38.0" layoutY="331.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите имя продавца" />
+      <ComboBox fx:id="buyer" editable="true" layoutX="38.0" layoutY="376.0" opacity="0.9" prefHeight="26.0" prefWidth="286.0" promptText="Введите имя покупателя(название фирмы)" />
+      <DatePicker fx:id="date" layoutX="38.0" layoutY="504.0" opacity="0.9" prefHeight="26.0" prefWidth="186.0" promptText="Введите дату сделки" />
     </children>
 </AnchorPane>

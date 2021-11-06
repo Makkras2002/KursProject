@@ -1,0 +1,53 @@
+
+h	java:S116)"SRename this field "Category" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şó’Ù
+j	java:S116,"PRename this field "Price" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ù²úıÿÿÿÿ
+f	java:S116/"QRename this field "Amount" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â™ıß
+g	java:S1162"RRename this field "Sirname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’šÚØ
+d	java:S1165"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îıœ±
+e	java:S1168"PRename this field "Buyer" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡‘‚š
+i	java:S116;"ORename this field "Date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»¢‡»şÿÿÿÿ
+m
+java:S3776l"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(÷‹¾†ÿÿÿÿÿ
+I
+java:S1905x"'Remove this unnecessary cast to "long".(‘ş‹üÿÿÿÿ8á§•ñÈ/
+O
+java:S1611‰"3Remove the parentheses around the "event" parameter(àÎóüÿÿÿÿ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(—Äã
+J
+java:S1905—"'Remove this unnecessary cast to "long".(†ÏíÁüÿÿÿÿ8æ§•ñÈ/
+O
+java:S1611£"3Remove the parentheses around the "event" parameter(Ğ¡™ıùÿÿÿÿ
+O	java:S106©"9Replace this use of System.out or System.err by a logger.(—Äã
+J
+java:S1905°"'Remove this unnecessary cast to "long".(‘ş‹üÿÿÿÿ8ñ§•ñÈ/
+O
+java:S1611»"3Remove the parentheses around the "event" parameter(­ÙÉ–şÿÿÿÿ
+O	java:S106Á"9Replace this use of System.out or System.err by a logger.(—Äã
+J
+java:S1905Ú"'Remove this unnecessary cast to "long".(‘ş‹üÿÿÿÿ8õ§•ñÈ/
+O
+java:S1611å"3Remove the parentheses around the "event" parameter(áõ©¬ûÿÿÿÿ
+>
+java:S1125ê"'Remove the unnecessary boolean literal.(ş¥¿ã
+o
+java:S2293|"YReplace the type specification in this constructor call with the diamond operator ("<>").(£à¹ö
+o
+java:S2293}"YReplace the type specification in this constructor call with the diamond operator ("<>").(«†ëë
+o
+java:S2293~"YReplace the type specification in this constructor call with the diamond operator ("<>").(òØğÅ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚ğ¢®üÿÿÿÿ
+u
+java:S2293€"YReplace the type specification in this constructor call with the diamond operator ("<>").(èíÌ°ıÿÿÿÿ
+p
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(É¯¨¦
+u
+java:S2293‚"YReplace the type specification in this constructor call with the diamond operator ("<>").(úßé»ùÿÿÿÿ
+u
+java:S2293ƒ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒŠîßşÿÿÿÿ
+u
+java:S2293„"YReplace the type specification in this constructor call with the diamond operator ("<>").(ºÿÅşûÿÿÿÿ
+u
+java:S2293…"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ÿø†ïşÿÿÿÿ
+/
+java:S1700 "Rename field "table"(ÊÊÉşÿÿÿÿ

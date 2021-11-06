@@ -1,0 +1,12 @@
+
+I
+java:S1611)"3Remove the parentheses around the "event" parameter(òü©ß
+B
+java:S11254"'Remove the unnecessary boolean literal.(Šºˆúÿÿÿÿ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(—Äã
+S
+java:S1128"=Remove this unused import 'javafx.collections.FXCollections'.(´¶²Æ
+Y
+java:S1128">Remove this unused import 'javafx.collections.ObservableList'.(ÄÜ€éüÿÿÿÿ
+V
+java:S1128";Remove this unused import 'javafx.scene.control.ChoiceBox'.(ã‚½úÿÿÿÿ

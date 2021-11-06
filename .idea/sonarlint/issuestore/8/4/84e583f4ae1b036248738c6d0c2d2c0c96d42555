@@ -1,0 +1,30 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ä«½
+S	java:S106"9Replace this use of System.out or System.err by a logger.(–ğèşÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(­–ÒÁøÿÿÿÿ
+A
+java:S1481|"&Remove this unused "s" local variable.(³³²ºûÿÿÿÿ
+B
+java:S1481"&Remove this unused "s" local variable.(³³²ºûÿÿÿÿ
+W	java:S125Õ"<This block of commented-out lines of code should be removed.(…€‰çùÿÿÿÿ
+T	java:S106Í"9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ
+i
+java:S3776Ğ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ãŒ½–
+U
+java:S1854Ô"9Remove this useless assignment to local variable "temp2".(†„…üùÿÿÿÿ
+P
+java:S1854Ó"9Remove this useless assignment to local variable "temp1".(åâ¯Ó
+o
+java:S1192ê"SDefine a constant instead of duplicating this literal "Files/UserBase.dat" 4 times.(å«òêùÿÿÿÿ
+ª
+java:S1192$"“Define a constant instead of duplicating this literal "ĞŸÑ€Ğ¸Ğ²ĞµÑ‚, ÑÑ‚Ğ¾ Ğ¡ĞµÑ€Ğ²ĞµÑ€! ĞŸĞ¾Ğ´Ñ‚Ğ²ĞµÑ€Ğ¶Ğ´Ğ°Ñ, Ğ²Ñ‹ Ğ²Ñ‹Ğ±Ñ€Ğ°Ğ»Ğ¸ : " 15 times.(Úã õ
+k
+java:S1192á"TDefine a constant instead of duplicating this literal "Files/AdminBase.dat" 4 times.(ÆÓë¹
+I
+java:S1121".Extract the assignment out of this expression.(­ÄÃŠûÿÿÿÿ
+J
+java:S1121Ÿ".Extract the assignment out of this expression.(¡œÏıÿÿÿÿ
+K
+java:S1066ê"/Merge this if statement with the enclosing one.(ŞıÅíşÿÿÿÿ
+l	java:S117Ğ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú›Öõúÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾©ò¹
