@@ -10,8 +10,8 @@ import java.util.List;
 
 public class ClientHandler implements Runnable {
     private Socket clientSocket;
-    private static BufferedReader in;
-    private static BufferedWriter out;
+    private BufferedReader in;
+    private BufferedWriter out;
     public ClientHandler(Socket socket)
     {
         clientSocket = socket;
