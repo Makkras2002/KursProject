@@ -8,38 +8,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="884.0" prefWidth="860.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Method">
+<AnchorPane prefHeight="773.0" prefWidth="860.0" style="-fx-background-size: 100% 100%;" styleClass="anchor" stylesheets="@backGroundImageSettings.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Method">
    <children>
-      <Label layoutX="221.0" layoutY="21.0" prefHeight="34.0" prefWidth="391.0" text="Удовлетворенность клиентов сервисом" textFill="#fff300">
+      <Label layoutX="16.0" layoutY="14.0" prefHeight="34.0" prefWidth="391.0" text="Удовлетворенность клиентов сервисом" textFill="#fff300">
          <font>
             <Font name="Italic_IV50" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="button" layoutX="328.0" layoutY="807.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
-      <Label layoutX="22.0" layoutY="249.0" prefHeight="34.0" prefWidth="186.0" text="Среднее качество " textFill="#f5c300">
+      <Button fx:id="button" layoutX="332.0" layoutY="720.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Хорошо" />
+      <Label layoutX="22.0" layoutY="119.0" prefHeight="34.0" prefWidth="186.0" text="Среднее качество " textFill="#f5c300">
          <font>
             <Font name="Italic_IV50" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="13.0" layoutY="350.0" prefHeight="24.0" prefWidth="74.0" text="Вывод:" textFill="#f5c300">
+      <Label layoutX="27.0" layoutY="297.0" prefHeight="24.0" prefWidth="74.0" text="Вывод:" textFill="#f5c300">
          <font>
             <Font name="Italic_IV50" size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="mMark" layoutX="220.0" layoutY="258.0" opacity="0.7" prefHeight="46.0" prefWidth="86.0">
+      <TextArea fx:id="mMark" layoutX="212.0" layoutY="135.0" opacity="0.7" prefHeight="46.0" prefWidth="86.0">
          <font>
             <Font name="Italic_IV50" size="18.0" />
          </font>
       </TextArea>
-      <TextArea fx:id="conclusion" layoutX="105.0" layoutY="340.0" opacity="0.7" prefHeight="42.0" prefWidth="632.0">
+      <TextArea fx:id="conclusion" layoutX="95.0" layoutY="286.0" opacity="0.7" prefHeight="42.0" prefWidth="632.0">
          <font>
             <Font name="Italic_IV50" size="16.0" />
          </font>
       </TextArea>
-      <Separator layoutX="63.0" layoutY="402.0" prefHeight="24.0" prefWidth="683.0" />
-      <PieChart fx:id="sphereDiag" layoutX="226.0" layoutY="441.0" prefHeight="342.0" prefWidth="410.0" title="Статистика востребованности категорий запчастей" />
-      <PieChart fx:id="satisfactionSphereDiag" layoutX="329.0" layoutY="72.0" prefHeight="258.0" prefWidth="460.0" title="Статистика удовлетворенности" />
-      <Label layoutX="18.0" layoutY="285.0" prefHeight="34.0" prefWidth="194.0" text="проведения сделок:" textFill="#f5c300">
+      <Separator layoutX="88.0" layoutY="340.0" prefHeight="24.0" prefWidth="683.0" />
+      <PieChart fx:id="sphereDiag" layoutX="225.0" layoutY="364.0" prefHeight="342.0" prefWidth="410.0" title="Статистика востребованности категорий запчастей" />
+      <PieChart fx:id="satisfactionSphereDiag" layoutX="411.0" layoutY="22.0" prefHeight="264.0" prefWidth="424.0" title="Статистика удовлетворенности" />
+      <Label layoutX="18.0" layoutY="161.0" prefHeight="34.0" prefWidth="194.0" text="проведения сделок:" textFill="#f5c300">
          <font>
             <Font name="Italic_IV50" size="18.0" />
          </font>
