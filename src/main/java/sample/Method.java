@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -46,7 +47,8 @@ public class Method {
 
     @FXML
     void initialize() {
-        mMark.setText(methodMark);
+        DecimalFormat df = new DecimalFormat("#.##");
+        mMark.setText(df.format(methodMark));
         boolean signal = true;
         Gson gson=new Gson();
         Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
