@@ -124,7 +124,7 @@ public class MainMenuAdm {
                 System.out.println(serverWord);
                 methodMark = Main.in.readLine();
                 transactionsDataInGson = Main.in.readLine();
-                buttonAction("/FXML/Method.fxml","Метод",729, 719);
+                buttonAction("/FXML/Method.fxml","Метод",860, 884);
             } catch (IOException e) {
                 e.printStackTrace();
             }
