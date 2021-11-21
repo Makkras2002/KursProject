@@ -48,7 +48,7 @@ public class Method {
     @FXML
     void initialize() {
         DecimalFormat df = new DecimalFormat("#.##");
-        mMark.setText(df.format(methodMark));
+        mMark.setText(df.format(Double.parseDouble(methodMark)));
         boolean signal = true;
         Gson gson=new Gson();
         Type trDataInGsonType = new TypeToken<Set<SpareData>>(){}.getType();
