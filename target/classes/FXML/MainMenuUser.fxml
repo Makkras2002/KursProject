@@ -18,5 +18,6 @@
         <Button fx:id="doMethod" layoutX="43.0" layoutY="307.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="222.0" stylesheets="@ButtonSettings.css" text="Статистика" />
         <Button fx:id="exit" layoutX="203.0" layoutY="392.0" mnemonicParsing="false" opacity="0.8" prefHeight="34.0" prefWidth="194.0" stylesheets="@ButtonSettings.css" text="Выйти из системы" />
       <Button fx:id="redactInfo" layoutX="333.0" layoutY="127.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="257.0" stylesheets="@ButtonSettings.css" text="Изменить существующие данные" />
+      <Button fx:id="doMethodInDiap" layoutX="333.0" layoutY="193.0" mnemonicParsing="false" opacity="0.8" prefHeight="42.0" prefWidth="258.0" stylesheets="@ButtonSettings.css" text="Статистика в диапазоне" />
     </children>
 </AnchorPane>
