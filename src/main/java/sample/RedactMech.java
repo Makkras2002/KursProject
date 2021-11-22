@@ -3,6 +3,7 @@ package sample;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -57,6 +58,9 @@ public class RedactMech {
     private ComboBox<String> buyer;
 
     @FXML
+    private Button findToRedButton;
+
+    @FXML
     void initialize() {
         Set<SpareData> dataSet = getInfo();
         List<String> nameMechList = new ArrayList<>();
@@ -93,6 +97,52 @@ public class RedactMech {
         buyer.setItems(buyerObsList);
         ObservableList<String> choiceB = FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10");
         choiceBox.setItems(choiceB);
+        findToRedButton.setOnAction((event)->{
+            boolean isFound = false;
+            for(SpareData data : dataSet){
+                if(data.getData_id().toString().equals(IDMech.getText())){
+                    price.setDisable(false);
+                    amount.setDisable(false);
+                    date.setDisable(false);
+                    choiceBox.setDisable(false);
+                    nameMech.setDisable(false);
+                    category.setDisable(false);
+                    sirname.setDisable(false);
+                    name.setDisable(false);
+                    buyer.setDisable(false);
+                    price.setText(data.getPart().getPrice());
+                    amount.setText(data.getAmount());
+                    String[] dDate = data.getDate().split("\\.");
+                    date.setValue(LocalDate.of(Integer.parseInt(dDate[2]),Integer.parseInt(dDate[1]),Integer.parseInt(dDate[0])));
+                    nameMech.setValue(data.getPart().getName());
+                    category.setValue(data.getPart().getCategory());
+                    sirname.setValue(data.getSeller().getSirname());
+                    name.setValue(data.getSeller().getName());
+                    buyer.setValue(data.getBuyer().getBuyer_name());
+                    choiceBox.setValue(data.getMark().getMark());
+                    isFound =true;
+                }
+            }
+            if(!isFound){
+                price.setText("");
+                price.setDisable(true);
+                amount.setText("");
+                amount.setDisable(true);
+                date.setDisable(true);
+                choiceBox.setValue("");
+                choiceBox.setDisable(true);
+                nameMech.setValue("");
+                nameMech.setDisable(true);
+                category.setValue("");
+                category.setDisable(true);
+                sirname.setValue("");
+                sirname.setDisable(true);
+                name.setValue("");
+                name.setDisable(true);
+                buyer.setValue("");
+                buyer.setDisable(true);
+            }
+        });
         addButton.setOnAction((event) -> {
             if(IDMech.getText().equals("") || IDMech.getText().length() > 5){
                 errorCase();

@@ -39,6 +39,8 @@ public class MainMenuUser {
     @FXML
     private Button exit;
 
+    @FXML
+    private Button doMethodInDiap;
 
     @FXML
     void initialize() {
@@ -87,6 +89,11 @@ public class MainMenuUser {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        });
+        doMethodInDiap.setOnAction((event) -> {
+            closeWindow(doMethodInDiap);
+            setMenuingSignal(false);
+            buttonAction("/FXML/StatsInRange.fxml","СтатВРадиусе",493, 326);
         });
         exit.setOnAction((event) -> {
             String word = "exit";
